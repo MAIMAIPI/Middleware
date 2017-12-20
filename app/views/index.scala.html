@@ -1,0 +1,428 @@
+@()
+
+<!DOCTYPE HTML>
+<html>
+    @head("首页") {
+            <!--Add-->
+        <link href="@routes.Assets.at("css/index.css")" rel='stylesheet' type='text/css'/>
+            <!--Add-->
+        <script>
+                $(document).ready(function () {
+                    $(".dropdown").hover(
+                            function () {
+                                $('.dropdown-menu', this).stop(true, true).slideDown("fast");
+                                $(this).toggleClass('open');
+                            },
+                            function () {
+                                $('.dropdown-menu', this).stop(true, true).slideUp("fast");
+                                $(this).toggleClass('open');
+                            }
+                    );
+
+                    var data = [
+                        {
+                            source: "项目管理",
+                            content: [
+                                "名称",
+                                "成员",
+                                "创建时间"
+                            ]
+                        },
+                        {
+                            source: "ACM管理",
+                            content: [
+                                "题名",
+                                "刷题人",
+                                "已经AC"
+                            ]
+                        },
+                        {
+                            source: "读书管理",
+                            content: [
+                                "书名",
+                                "阅读者"
+                            ]
+                        }
+                    ];
+                    var s1 = $("#sources");
+                    var s2 = $("#contents");
+
+                    $.each(data, function (d) {
+                        var t = data[d].source;
+                        s1.append("<option value='" + t + "'>" + t + "</option>")
+                    });
+
+                    var init = data[0].content;
+
+                    $.each(init, function (d) {
+                        s2.append("<option value='" + init[d] + "'>" + init[d] + "</option>")
+                    });
+
+                    s1.change(function () {
+                        s2.empty();
+                        var index = s1.get(0).selectedIndex;
+                        var t = data[index].content;
+                        $.each(t, function (d) {
+                            s2.append("<option value='" + t[d] + "'>" + t[d] + "</option>")
+                        })
+                    })
+                });
+        </script>
+    }
+<body>
+    @nav()
+        <!-- banner -->
+    <div class="banner">
+            <!-- banner Slider starts Here -->
+        <script src="@routes.Assets.at("js/responsiveslides.min.js")"></script>
+        <script>
+                // You can also use "$(window).load(function() {"
+                $(function () {
+                    // Slideshow 4
+                    $("#slider3").responsiveSlides({
+                        auto: true,
+                        pager: true,
+                        nav: true,
+                        speed: 500,
+                        namespace: "callbacks",
+                        before: function () {
+                            $('.events').append("<li>before event fired.</li>");
+                        },
+                        after: function () {
+                            $('.events').append("<li>after event fired.</li>");
+                        }
+                    });
+
+                });
+        </script>
+            <!--//End-slider-script -->
+        <div id="top" class="callbacks_container">
+            <ul class="rslides" id="slider3">
+                <li>
+                    <div class="banner-bg">
+                        <div class="container">
+                            <div class="banner-info">
+                                <h3>Take the first step<span>to knowledge friends</span></h3>
+                                <p>Inspired by Brasil’s bold colors and matching up to football’s on-pitch
+                                    playmakers, these kicks are ready to stand out.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="banner-bg banner-img2">
+                        <div class="container">
+                            <div class="banner-info">
+                                <h3>Stay in touch<span>Lorem Ipsum</span></h3>
+                                <p>Inspired by bold colors and matching up to football’s on-pitch
+                                    playmakers, these kicks are ready to stand out.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="banner-bg banner-img">
+                        <div class="container">
+                            <div class="banner-info">
+                                <h3>therefore always<span>looks reasonable</span></h3>
+                                <p>Inspired by Brasil’s bold colors and matching up to football’s on-pitch
+                                    playmakers, these Brasil’s kicks are ready to stand out.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+        <!-- //banner -->
+        <!--<div class="copyrights">Collect from <a href="http://www.cssmoban.com/">手机网站模板</a></div>-->
+    <div class="details">
+        <div class="container">
+            <div class="col-sm-10 dropdown-buttons">
+                <div class="col-sm-4 dropdown-button">
+                    <div class="section_1">
+                            <!-- <select id="country" onChange="change_country(this.value)" class="frm-field required">-->
+                        <select id="sources" class="frm-field required">
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-4 dropdown-button">
+                    <div class="section_1">
+                        <select id="contents" class="frm-field required">
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-4 dropdown-button">
+                    <div class="input-group">
+                        <input class="form-control has-dark-background" name="slider-name" id="slider-name"
+                        placeholder="本馆资源搜索" type="text" required="">
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-sm-2 submit_button">
+                <form>
+                    <input type="submit" value="搜索">
+                </form>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="grid_1">
+        <div class="container">
+            <div class="col-md-4">
+                <div class="news">
+                    <h3>检查结果</h3>
+                    <div class="section-content">
+                        <article>
+                            <figure class="date"><i class="fa fa-file-o"></i>07-25-2017</figure>
+                            <a href="#">大二项目中期检查结果公示</a>
+                        </article>
+                        <article>
+                            <figure class="date"><i class="fa fa-file-o"></i>08-24-2017</figure>
+                            <a href="#">大一项目末期检查结果公示</a>
+                        </article>
+                        <article>
+                            <figure class="date"><i class="fa fa-file-o"></i>08-24-2017</figure>
+                            <a href="#">大三服创项目检查结果公示</a>
+                        </article>
+                        <article>
+                            <figure class="date"><i class="fa fa-file-o"></i>08-24-2017</figure>
+                            <a href="#">大一刷题数检查结果公示</a>
+                        </article>
+
+                    </div><!-- /.section-content -->
+                    <a href="#" class="read-more">更多</a>
+                </div><!-- /.news-small -->
+            </div>
+            <div class="col-md-8 grid_1_right">
+                <h3>工作室通知</h3>
+                <div class="but_list">
+                    <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+                        <ul id="myTab" class="nav nav-tabs nav-tabs1" role="tablist">
+                            <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab"
+                            data-toggle="tab" aria-controls="home"
+                            aria-expanded="true">任务通知</a></li>
+                            <li role="presentation"><a href="#profile" role="tab" id="profile-tab" data-toggle="tab"
+                            aria-controls="profile">比赛通知</a></li>
+                            <li role="presentation"><a href="#profile1" role="tab" id="profile-tab1" data-toggle="tab"
+                            aria-controls="profile1">个人通知</a></li>
+                        </ul>
+                        <div id="myTabContent" class="tab-content">
+                            <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+                                <div class="events_box">
+                                    <div class="event_left">
+                                        <div class="event_left-item">
+                                            <div class="icon_2"><i class="fa fa-clock-o"></i>2017/02/05 19:30</div>
+                                                <!--<div class="icon_2"><i class="fa fa-user"></i>From Who</div>-->
+                                            <div class="icon_2">
+                                                <div class="speaker">
+                                                    <i class="fa fa-user"></i>
+                                                    <div class="speaker_item">
+                                                        <a href="#">刘先生</a>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="event_right">
+                                        <h3><a href="#">大二项目选题</a></h3>
+                                        <p>请大二的各位同学下载项目题目文档，从里面选择一个题目作为本次的项目题目，并创建好项目 <a href="#">更多</a></p>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="events_box">
+                                    <div class="event_left">
+                                        <div class="event_left-item">
+                                            <div class="icon_2"><i class="fa fa-clock-o"></i>2017/02/05 19:30</div>
+                                                <!--<div class="icon_2"><i class="fa fa-user"></i>From Who</div>-->
+                                            <div class="icon_2">
+                                                <div class="speaker">
+                                                    <i class="fa fa-user"></i>
+                                                    <div class="speaker_item">
+                                                        <a href="#">刘先生</a>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="event_right">
+                                        <h3><a href="#">大二项目选题</a></h3>
+                                        <p>请大二的各位同学下载项目题目文档，从里面选择一个题目作为本次的项目题目，并创建好项目 <a href="#">更多</a></p>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="events_box">
+                                    <div class="event_left">
+                                        <div class="event_left-item">
+                                            <div class="icon_2"><i class="fa fa-clock-o"></i>2017/02/05 19:30</div>
+                                                <!--<div class="icon_2"><i class="fa fa-user"></i>From Who</div>-->
+                                            <div class="icon_2">
+                                                <div class="speaker">
+                                                    <i class="fa fa-user"></i>
+                                                    <div class="speaker_item">
+                                                        <a href="#">刘先生</a>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="event_right">
+                                        <h3><a href="#">大二项目选题</a></h3>
+                                        <p>请大二的各位同学下载项目题目文档，从里面选择一个题目作为本次的项目题目，并创建好项目 <a href="#">更多</a></p>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
+                                <div class="events_box">
+                                    <div class="event_left">
+                                        <div class="event_left-item">
+                                            <div class="icon_2"><i class="fa fa-clock-o"></i>2017/02/05 19:30</div>
+                                                <!--<div class="icon_2"><i class="fa fa-user"></i>From Who</div>-->
+                                            <div class="icon_2">
+                                                <div class="speaker">
+                                                    <i class="fa fa-user"></i>
+                                                    <div class="speaker_item">
+                                                        <a href="#">刘先生</a>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="event_right">
+                                        <h3><a href="#">服创比赛</a></h3>
+                                        <p>明天开始进行服创比赛报名，请大家开始自行组队，然后报名 <a href="#">更多</a></p>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="events_box">
+                                    <div class="event_left">
+                                        <div class="event_left-item">
+                                            <div class="icon_2"><i class="fa fa-clock-o"></i>2017/02/05 19:30</div>
+                                            <div class="icon_2">
+                                                <div class="speaker">
+                                                    <i class="fa fa-user"></i>
+                                                    <div class="speaker_item">
+                                                        <a href="#">刘先生</a>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="event_right">
+                                        <h3><a href="#">服创比赛</a></h3>
+                                        <p>明天开始进行服创比赛报名，请大家开始自行组队，然后报名 <a href="#">更多</a></p>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="events_box">
+                                    <div class="event_left">
+                                        <div class="event_left-item">
+                                            <div class="icon_2"><i class="fa fa-clock-o"></i>2017/02/05 19:30</div>
+                                            <div class="icon_2">
+                                                <div class="speaker">
+                                                    <i class="fa fa-user"></i>
+                                                    <div class="speaker_item">
+                                                        <a href="#">刘先生</a>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="event_right">
+                                        <h3><a href="#">服创比赛</a></h3>
+                                        <p>明天开始进行服创比赛报名，请大家开始自行组队，然后报名 <a href="#">更多</a></p>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="profile1" aria-labelledby="profile-tab1">
+                                <div class="events_box">
+                                    <div class="event_left">
+                                        <div class="event_left-item">
+                                            <div class="icon_2"><i class="fa fa-clock-o"></i>2017/02/05 19:30</div>
+                                                <!--<div class="icon_2"><i class="fa fa-user"></i>来自:刘先生</div>-->
+                                            <div class="icon_2">
+                                                <div class="speaker">
+                                                    <i class="fa fa-user"></i>
+                                                    <div class="speaker_item">
+                                                        <a href="#">刘先生</a>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="event_right">
+                                        <h3><a href="#">需求分析更新</a></h3>
+                                        <p>刘先生的项目需求分析更新啦 <a href="#">更多</a></p>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="events_box">
+                                    <div class="event_left">
+                                        <div class="event_left-item">
+                                            <div class="icon_2"><i class="fa fa-clock-o"></i>2017/02/05 19:30</div>
+                                            <div class="icon_2">
+                                                <div class="speaker">
+                                                    <i class="fa fa-user"></i>
+                                                    <div class="speaker_item">
+                                                        <a href="#">刘先生</a>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="event_right">
+                                        <h3><a href="#">需求分析更新</a></h3>
+                                        <p>刘先生的项目需求分析更新啦 <a href="#">更多</a></p>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="events_box">
+                                    <div class="event_left">
+                                        <div class="event_left-item">
+                                            <div class="icon_2"><i class="fa fa-clock-o"></i>2017/02/05 19:30</div>
+                                            <div class="icon_2">
+                                                <div class="speaker">
+                                                    <i class="fa fa-user"></i>
+                                                    <div class="speaker_item">
+                                                        <a href="#">刘先生</a>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="event_right">
+                                        <h3><a href="#">需求分析更新</a></h3>
+                                        <p>刘先生的项目需求分析更新啦 <a href="#">更多</a></p>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="read-more">更多</a>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    @footer()
+    <script src="@routes.Assets.at("js/jquery.countdown.js")"></script>
+    <script src="@routes.Assets.at("js/script.js")"></script>
+</body>
+</html>}

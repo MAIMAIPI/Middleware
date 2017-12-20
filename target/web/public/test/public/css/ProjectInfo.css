@@ -1,0 +1,334 @@
+/*项目要求*/
+a{
+    cursor: pointer;
+}
+.project_list .pro-table-header{
+    background-color:#0C5799;
+}
+.project_list .table-header > div {
+    float: left;
+    padding: 15px 20px;
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 1;
+}
+.project_list ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.rr {
+    float: right;
+}
+.ll{
+    float: left;
+}
+/*需求文档*/
+.project_list .table-list{
+    margin: 0;
+    padding: 0;
+}
+.project_list .table-list ul{
+    padding: 0;
+}
+.project_list .table-list li{
+    float: none;
+    margin: 0;
+    list-style: none;
+    border-bottom: 1px dashed #e2e2e3;
+    background-color: #ffffff;
+}
+.project_list .table-list li > div{
+    float: left;
+    padding: 15px 20px;
+}
+.project_list .table-list .notice{
+    font-size: 15px;
+    color: #aaaaaa;
+}
+.project_list .table-list .UDload{
+    float: right;
+    font-size: 25px;
+    padding: 8px 10px;
+}
+.project_list .table-list .UDload .download{
+    margin-left: 25px;
+}
+.project_list .table-list .GTpic .notice{
+    padding: 30px 0px;
+}
+.project_list .table-list .GTpic .UDload{
+    padding: 38px 10px;
+}
+/********************
+ * 评论
+ ********************/
+
+.review-list{
+    padding-left: 8px;
+}
+.review-list .review-item{
+    padding: 12px 0;
+    border-bottom: 1px dashed #dddddd;
+}
+.review-list .review-item .main-hd{
+    padding: 0;
+    margin-bottom: 0;
+    height: 44px;
+}
+.main .main-hd{
+    /*line-height: 1.8;*/
+    color: #999;
+    overflow: hidden;
+}
+header{
+    position: relative;
+}
+.review-list .review-item .main-hd .name , .review-list .main-meta , .review-list .review-item .score{
+    vertical-align: middle;
+    margin-left: 10px;
+    font-size: 13px;
+}
+.review-list .main-meta{
+    float: right;
+}
+.review-list .review-item .main-bd h2{
+    font-size: 14px;
+    margin-bottom: 3px;
+    margin-top: 6px;
+}
+.review-list .review-item .main-bd .spoiler-tip{
+    color: #9b9b9b;
+    margin: 0 0 5px 0;
+    padding-left: 8px;
+    line-height: 1;
+    font-size: 12px;
+    border-left: #9b9b9b 2px dashed;
+}
+.review-list .review-item .main-bd .book_comment {
+    text-indent: 2em;
+    color: #080808;
+    overflow: hidden;
+    font-size: 13px;
+}
+.review-list .review-item .main-bd .action{
+    margin-top: 6px;
+}
+.review-list .review-item .main-bd .action .action-btn{
+    color: #3377aa;
+    padding: 0px 6px 4px 6px;
+    margin-right: 4px;
+    border-radius: 2px;
+    background-color: #f0f7f9;
+    display: inline-block;
+    line-height: 1;
+}
+.review-list .review-item .main-bd .action .action-btn img{
+    width: 12px;
+}
+.article img{
+    max-width: 100%;
+}
+.review-list .review-item .main-bd .action .action-btn span{
+    font-size: 12px;
+}
+.review-list .review-item .main-bd .action .reply{
+    font-size: 13px;
+    margin-left: 10px;
+}
+.review-list .review-item .main-bd .action .fold{
+    float: right;
+    color: #aaaaaa;
+    background-color: #ffffff;
+}
+.reviews{
+    margin-top: 10px;
+}
+.reviews .table-header a{
+    color: #ffffff;
+    padding: 14px;
+}
+.reviews .table-header a:hover{
+    color: gold;
+    font-size: 15px;
+    padding: 10px;
+}
+.pl{
+    margin: 10px 0;
+}
+/*发表评论*/
+.publish-comment{
+    margin-top: 10px;
+    margin-left: 5px;
+}
+.del-publish-comment{
+    margin-top: 10px;
+    margin-right: 5px;
+    float: right;
+}
+/*
+项目介绍
+*/
+.projectBox{
+    margin-top: 4px;
+}
+
+.projectBox_1{
+    margin-top: 20px;
+}
+
+.projectBox h3{
+    color: #0C5799;
+}
+
+.project_image{
+    width: 25%;
+    float: left;
+    margin-right: 5%;
+}
+
+.project_image img{
+    border: 3px solid #d9dde1;
+}
+
+.project_image_desc {
+    overflow: hidden;
+}
+.project_image_desc h2{
+    color: #000;
+    font-size: 1.1em;
+    margin: 14px 0 0 0;
+}
+
+.project_description{
+    margin: 1em 0 0 0;
+}
+
+.project_description p span{
+    font-weight: 500;
+    color: #000000;
+    font-size: 1em;
+}
+.project_description p{
+    color:#777;
+    text-indent: 2em;
+    font-size:0.95em;
+    line-height:1.8em;
+}
+
+/*
+.project_description p a{
+    color:#000;
+}
+.project_description p a:hover{
+    color:#e2598e;
+}
+.project_image_desc{
+    overflow:hidden;
+}
+*/
+
+/*
+项目成员
+*/
+.person-item .person-thumb {
+    width:25%;
+    margin-right: 10px;
+}
+
+.person-thumb img{
+    border-radius: 50%;
+    border: 3px solid #d9dde1;
+}
+
+ul.persons{
+    padding:0;
+    margin:2em 0 0 0;
+    list-style:none;
+}
+ul.persons h3{
+    font-size:1.5em;
+    color: #0C5799;
+    margin-bottom:1em;
+}
+ul.persons li{
+    margin-bottom:1em;
+}
+
+.person-content {
+    padding-top: 10px;
+    overflow: hidden;
+}
+.person-content h6{
+    font-weight:600;
+    font-size: 15px;
+    margin-bottom:4px;
+}
+.person-content h6 a{
+    color:#000;
+}
+.person-content h6 a:hover{
+    color:#1077CC;
+}
+.person-content p{
+    font-weight: 400;
+    font-size:0.95em;
+}
+.person-content p a{
+    color:#777;
+}
+.person-content p a:hover{
+    color:#000;
+}
+
+/*
+项目总结
+ */
+.projectSummarize{
+    margin: 2em 0 0 0;
+    position: relative;
+}
+
+.projectSummarize h3{
+    font-size:1.5em;
+    color: #0C5799;
+    margin-bottom:1em;
+}
+
+
+.project_sumup{
+    min-height: 200px;
+    height: auto;
+    outline: none;
+    border: 1px solid #a0b3d6;
+    overflow-y: auto;
+}
+
+
+.projectSummarize .project-submit{
+    position: absolute;
+    right: 0;
+    border: none;
+    margin-right: 5px;
+    background-color:#1077CC;
+    color: #ffffff;
+    line-height: 30px;
+    padding: 0 15px;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-radius: 0px;
+    display: inline-block;
+    margin-top: 10px;
+    outline: none;
+}
+.projectSummarize .project-submit:hover{
+    background-color:#2f374c;
+}
+
+.project_list .input-grade{
+    margin: 0 0 15px 0;
+}
+.project_list .give-grade {
+    color: #080808;
+    font-size: 16px;
+}

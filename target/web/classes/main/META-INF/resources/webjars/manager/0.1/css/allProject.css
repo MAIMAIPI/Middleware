@@ -1,0 +1,85 @@
+.allProject_banner{
+    background: url(../images/2.jpg)no-repeat center top;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    min-height:250px;
+    text-align: center;
+    padding: 3em 0 0 0;
+}
+.allProject_main{
+    padding: 5em 0;
+}
+.project_list .table-list li > div.id_col {
+    width: 9%;
+    text-transform: uppercase;
+}
+.project_list .table-header > div {
+    float: left;
+    padding: 15px 20px;
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 1;
+}
+.project_list .table-header > div.id_col {
+    text-transform: uppercase;
+}
+.project_list .table-header > div.name_col {
+    width: 52%;
+}
+.project_list .table-header > div.member_col {
+    width: 17%;
+}
+.project_list .table-list {
+    margin: 0;
+    padding: 0;
+}
+.project_list .table-list li {
+    float: none;
+    margin: 0;
+    list-style: none;
+    border-bottom: 1px dashed #e2e2e3;
+    background-color: #ffffff;
+}
+.project_list .table-list li > div.id_col {
+    width: 9%;
+    text-transform: uppercase;
+}
+.project_list .table-list li > div {
+    float: left;
+    padding: 15px 28px;
+}
+.project_list .table-list li > div.name_col {
+    width: 53%;
+}
+.project_list .table-list li > div.member_col{
+    width: 17%;
+}
+.project_list .table-list li > div.date_col {
+    width: 19%;
+}
+.project_list .table-list li:hover {
+    background-color:#9FA8C1;
+    color: #ffffff;
+}
+.project_list .table-list li:hover .name_col a{
+    color: #ffffff;
+}
+.project_list .show-types-choose{
+    padding: 0;!important;
+    margin: 0;!important;
+}
+.project_list .show-types-choose > div {
+    float: left;
+    padding: 10px 80px;
+    width: 33%;
+    font-size: 22px;
+    margin: 8px 0;
+}
+.project_list .show-types-choose a{
+    cursor: pointer;
+}
+.project_list .event_pagination{
+    margin: 20px;
+}

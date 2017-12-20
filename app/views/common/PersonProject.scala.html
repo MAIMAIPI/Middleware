@@ -1,0 +1,323 @@
+@()
+
+<!DOCTYPE HTML>
+<html>
+    @head("我的项目信息") {
+            <!--Add-->
+        <link type="text/css" href="@routes.Assets.at("css/ProjectInfo.css")" rel="stylesheet">
+        <script src="@routes.Assets.at("js/bootstrap-wysiwyg.js")"></script>
+        <script src="@routes.Assets.at("js/jquery.hotkeys.js")"></script>
+            <!--Add-->
+        <script>
+                $(document).ready(function () {
+                    $(".dropdown").hover(
+                            function () {
+                                $('.dropdown-menu', this).stop(true, true).slideDown("fast");
+                                $(this).toggleClass('open');
+                            },
+                            function () {
+                                $('.dropdown-menu', this).stop(true, true).slideUp("fast");
+                                $(this).toggleClass('open');
+                            }
+                    );
+                });
+        </script>
+    }
+<body>
+    @nav()
+        <!-- banner -->
+    <div class="courses_banner">
+        <div class="container">
+            <h3>我的项目信息</h3>
+            <p class="description">
+                Welcome to join JSUCCW! Here we will meet a group of like-minded students,
+                grow together, learn professional knowledge, I hope everyone here can meet better myself. Finally, I wish
+                you all success!
+            </p>
+            <div class="breadcrumb1">
+                <ul>
+                    <li class="icon6"><a href="index.html">首页</a></li>
+                    <li class="current-page">我的项目信息</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+        <!-- //banner -->
+    <div class="courses_box1">
+        <div class="container">
+            <div class="col-md-3">
+                <div class="projectBox">
+                    <h3>项目介绍</h3>
+                    <div class="projectBox_1">
+                        <div class="project_image">
+                            <img src="@routes.Assets.at("images/t17.jpg")" class="img-responsive" alt=""/>
+                        </div>
+                        <div class="project_image_desc">
+                            <h2>局域网聊天</h2>
+                                <!--<p>Tempor Incididunt</p>-->
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="project_description">
+                        <p><span>简介:</span>实现注册，登录，查找好友，单聊（添加好友，删除好友，查看并修改详细信息，查看聊天记录，聊天{在线信息，
+                            在线未读信息提醒，离线信息},发送文件，发送声音），群聊（与单聊类似）等。 <!--<a href="#">更多..</a>-->
+                        </p>
+                    </div>
+                </div>
+                <ul class="persons">
+                    <h3>项目成员</h3>
+                    <li>
+                        <article class="person-item">
+                            <div class="person-thumb pull-left">
+                                <img src="@routes.Assets.at("images/head.jpg")" class="img-responsive" alt=""/>
+                            </div>
+                            <div class="person-content">
+                                <h6><a href="#">刘小新</a></h6>
+                                <p><a href="#">年级:</a>15级</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="person-item">
+                            <div class="person-thumb pull-left">
+                                <img src="@routes.Assets.at("images/head.jpg")" class="img-responsive" alt=""/>
+                            </div>
+                            <div class="person-content">
+                                <h6><a href="#">刘小新</a></h6>
+                                <p><a href="#">年级:</a>15级</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="person-item">
+                            <div class="person-thumb pull-left">
+                                <img src="@routes.Assets.at("images/head.jpg")" class="img-responsive" alt=""/>
+                            </div>
+                            <div class="person-content">
+                                <h6><a href="#">刘小新</a></h6>
+                                <p><a href="#">年级:</a>15级</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </article>
+                    </li>
+                </ul>
+                <div class="projectSummarize">
+                    <h3>项目总结</h3>
+                    <div class="project_sumup" contenteditable="true">
+                        你对自己的项目有些什么感悟呢？
+                    </div>
+                    <input type="submit" value="确认" class="project-submit">
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="project_list">
+                    <div class="table-header clearfix">
+                        <div class="project_request">项目要求</div>
+                    </div>
+                    <ul class="table-list">
+                        <li class="clearfix">
+                            <div class="Text">需求文档&nbsp;:</div>
+                            <div class="document"><p class="notice">请上传您的需求文档</p></div>
+                            <div class="UDload">
+                                <a class="upload"><i class="fa fa-arrow-circle-o-up"></i></a>
+                                <a class="download"><i class="fa fa-arrow-circle-o-down"></i></a>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="Text">功能点和技术点&nbsp;:</div>
+                            <div class="document"><p class="notice">请上传您的功能点和技术点文档</p></div>
+                            <div class="UDload">
+                                <a class="upload"><i class="fa fa-arrow-circle-o-up"></i></a>
+                                <a class="download"><i class="fa fa-arrow-circle-o-down"></i></a>
+                            </div>
+                        </li>
+                        <li class="clearfix GTpic">
+                            <div class="addPic"><img src="@routes.Assets.at("images/addPic.png")" style="width: 80px"></div>
+                            <div class="picShow"><p class="notice">请上传您的甘特图</p></div>
+                            <div class="UDload">
+                                <a class="upload"><i class="fa fa-arrow-circle-o-up"></i></a>
+                                <a class="download"><i class="fa fa-arrow-circle-o-down"></i></a>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="Text col-xs-2">Github链接&nbsp;:</div>
+                            <div class="link col-xs-9"><input type="text" placeholder="请上传您的Github链接" style="width: 100%"></div>
+                            <div class="UDload col-xs-1">
+                                <a class="upload"><i class="fa fa-arrow-circle-o-up"></i></a>
+                            </div>
+                        </li>
+                    </ul>
+                    <section class="reviews mod book-content">
+                        <header>
+                            <div class="table-header clearfix">
+                                <div class="comment">项目评论区</div>
+                                    <!--<a href="#write-comment" class="create-review btn  redbutt rr">
+                                <span>我要打分</span>
+                            </a>-->
+                            </div>
+
+                        </header>
+                        <div class="review-list  ">
+                            <ul>
+                                <li>
+                                    <div class="main review-item">
+                                        <header class="main-hd">
+                                            <div class="ll">
+                                                <a href="#" class="avator">
+                                                    <img width="40" height="40" src="@routes.Assets.at("images/head.jpg")">
+                                                </a>
+                                            </div>
+                                            <a href="#" class="name">灿烈</a>
+                                            <span content="2017-10-28" class="main-meta">2017-10-28 23:34:49</span>
+                                            <br>
+                                            <span class="score"> 9.9 分</span>
+                                        </header>
+                                        <div class="main-bd">
+                                            <div class="review-short">
+                                                <div class="short-content">
+                                                    <p class="book_comment">
+                                                        人生如逆旅，我亦是行人。人生匆匆，对于刚刚进入职场的年轻人来讲，生活已经安定下来了，如果有一个稳定的结婚对象，那么生活基本已经定了型，即未来几十年里，会不断重复着上班下班、接待客户或者相夫教子的生活。
+                                                        可芒芴之间，总会觉得生活缺了点什么。可能有时一觉醒来，会...
+                                                        &nbsp;(<a href="#" class="unfold" title="查看全部">查看全部</a>)
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="main review-item">
+                                        <header class="main-hd">
+                                            <div class="ll">
+                                                <a href="#" class="avator">
+                                                    <img width="40" height="40" src="@routes.Assets.at("images/head.jpg")">
+                                                </a>
+                                            </div>
+                                            <a href="#" class="name">灿烈</a>
+                                            <span content="2017-10-28" class="main-meta">2017-10-28 23:34:49</span>
+                                            <br>
+                                            <span class="score"> 9.9 分</span>
+                                        </header>
+                                        <div class="main-bd">
+                                            <div class="review-short">
+                                                <div class="short-content">
+                                                    <p class="book_comment">
+                                                        人生如逆旅，我亦是行人。人生匆匆，对于刚刚进入职场的年轻人来讲，生活已经安定下来了，如果有一个稳定的结婚对象，那么生活基本已经定了型，即未来几十年里，会不断重复着上班下班、接待客户或者相夫教子的生活。
+                                                        可芒芴之间，总会觉得生活缺了点什么。可能有时一觉醒来，会...
+                                                        &nbsp;(<a href="#" class="unfold" title="查看全部">查看全部</a>)
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="main review-item">
+                                        <header class="main-hd">
+                                            <div class="ll">
+                                                <a href="#" class="avator">
+                                                    <img width="40" height="40" src="@routes.Assets.at("images/head.jpg")">
+                                                </a>
+                                            </div>
+                                            <a href="#" class="name">灿烈</a>
+                                            <span content="2017-10-28" class="main-meta">2017-10-28 23:34:49</span>
+                                            <br>
+                                            <span class="score"> 9.9 分</span>
+                                        </header>
+                                        <div class="main-bd">
+                                            <div class="review-short">
+                                                <div class="short-content">
+                                                    <p class="book_comment">
+                                                        人生如逆旅，我亦是行人。人生匆匆，对于刚刚进入职场的年轻人来讲，生活已经安定下来了，如果有一个稳定的结婚对象，那么生活基本已经定了型，即未来几十年里，会不断重复着上班下班、接待客户或者相夫教子的生活。
+                                                        可芒芴之间，总会觉得生活缺了点什么。可能有时一觉醒来，会...
+                                                        &nbsp;(<a href="#" class="unfold" title="查看全部">查看全部</a>)
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                                <!-- COLLECTED CSS -->
+                        </div>
+                        <p class="pl">><a href="#">更多评论</a></p>
+                    </section>
+
+                    <div class="panel panel-default" id="write-comment">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <span class="fa fa-flag" style="color: red"></span> &nbsp;&nbsp;发表评论
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                            <form class="form-horizontal">
+                                <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
+                                    <div class="btn-group">
+                                        <a class="btn btn-default" data-edit="italic" title="斜体">
+                                            <i class="fa fa-italic"></i>
+                                        </a>
+                                        <a class="btn btn-default" data-edit="bold" title="粗体">
+                                            <i class="fa fa-bold"></i>
+                                        </a>
+                                        <a class="btn btn-default" data-edit="strikethrough" title="删除线">
+                                            <i class="fa fa-strikethrough"></i>
+                                        </a>
+                                        <a class="btn btn-default" data-edit="underline" title="下划线">
+                                            <i class="fa fa-underline"></i>
+                                        </a>
+                                    </div>
+                                    <div class="btn-group">
+                                        <a class="btn btn-default" data-edit="justifyleft" title="左对齐">
+                                            <i class="fa fa-align-left"></i>
+                                        </a>
+                                        <a class="btn btn-default" data-edit="justifycenter" title="居中对齐">
+                                            <i class="fa fa-align-center"></i>
+                                        </a>
+                                        <a class="btn btn-default" data-edit="justifyright" title="右对齐">
+                                            <i class="fa fa-align-right"></i>
+                                        </a>
+                                        <a class="btn btn-default" data-edit="justifyfull" title="两段对齐">
+                                            <i class="fa fa-align-justify"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div id="editor" class="form-control" style="height: 300px">请发表文明评论</div>
+                                <button class="btn btn-primary publish-comment ">发表评论</button>
+                                <button class="btn btn-primary del-publish-comment ">取消发表</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    @footer()
+        <!-- FlexSlider -->
+    <link href="@routes.Assets.at("css/flexslider.css")" rel='stylesheet' type='text/css'/>
+    <script defer src="@routes.Assets.at("js/jquery.flexslider.js")"></script>
+<script type="text/javascript">
+        $(function () {
+            SyntaxHighlighter.all();
+        });
+        $(window).load(function () {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                start: function (slider) {
+                    $('body').removeClass('loading');
+                }
+            });
+        });
+</script>
+<script>
+        $(function () {
+            $('[data-toggle = "tooltip"]').tooltip();
+        });
+        $('a[title]').tooltip({container: 'body'});
+        $('#editor').wysiwyg();
+</script>
+    <!-- FlexSlider -->
+</body>
+</html>
