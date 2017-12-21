@@ -1,4 +1,4 @@
-@()
+@(batches: Seq[Batches])
 
 <!DOCTYPE HTML>
 <html>
@@ -54,40 +54,31 @@
                 <div class="leftmain">
                     <div class="west">
                         <ul>
-                            <li class="account1">
-                                <a id="west1" class="actived">
-                                    <i class="fa fa-tasks"></i><span>17年下</span><i class="fa fa-angle-down"></i>
-                                </a>
-                            </li>
-                            <div class="submenu1" style="display: none; ">
-                                <ul class="root">
-                                    <li>
-                                        <a index="1" class="actived" onclick="change_div('dynamicall')">
-                                            <i class="fa fa-leaf"></i><span>全部</span><i class="fa fa-angle-right"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a index="2">
-                                            <i class="fa fa-leaf"></i><span>17级</span><i class="fa fa-angle-right"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a index="3">
-                                            <i class="fa fa-leaf"></i><span>16级</span><i class="fa fa-angle-right"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a index="4">
-                                            <i class="fa fa-leaf"></i><span>15级</span><i class="fa fa-angle-right"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a index="5">
-                                            <i class="fa fa-leaf"></i><span>15级以前</span><i class="fa fa-angle-right"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                            @for(batch <- batches) {
+                                <li class="account1">
+                                    <a id="west1" class="actived">
+                                        <i class="fa fa-tasks"></i>
+                                        <span>@batch.year 年</span>
+                                        <i class="fa fa-angle-down"></i>
+                                    </a>
+                                </li>
+
+                                <div class="submenu1" style="display: none; ">
+                                    <ul class="root">
+                                    @for(batchItem <- batch.batchList) {
+                                        <li>
+                                            <a id="batch @batchItem.bid" class="actived">
+                                                <i class="fa fa-leaf"></i>
+                                                <span>@{
+                                                    batchItem.level + batchItem.name + "学期"
+                                                }</span>
+                                                <i class="fa fa-angle-right"></i>
+                                            </a>
+                                        </li>
+                                    }
+                                    </ul>
+                                </div>
+                            }
                         </ul>
                     </div>
                 </div>
@@ -97,7 +88,8 @@
                     <ul class="nav nav-tabs show-types-choose" id="tab_ul">
                         <li class="active mid-term-examination">
                             <a href="#zqjj" data-toggle="tab" id="zqjj_a">
-                                <i class="fa fa-google-wallet"></i>&nbsp; 周期检查:
+                                <i class="fa fa-google-wallet"></i>
+                                    &nbsp; 周期检查:
                             </a>
                         </li>
                         <li>
@@ -109,12 +101,14 @@
                         </li>
                         <li class="">
                             <a href="#qzjj" data-toggle="tab" id="qzjj_a">
-                                <i class="fa fa-google-wallet"></i>&nbsp; 中期检查
+                                <i class="fa fa-google-wallet"></i>
+                                    &nbsp; 中期检查
                             </a>
                         </li>
                         <li class="final-examination">
                             <a href="#mqjj" data-toggle="tab" id="mqjj_a">
-                                <i class="fa fa-google-wallet"></i>&nbsp; 末期检查
+                                <i class="fa fa-google-wallet"></i>
+                                    &nbsp; 末期检查
                             </a>
                         </li>
 
@@ -131,28 +125,32 @@
                                 <li class="clearfix">
                                     <div class="id_col">001</div>
                                     <div class="name_col"><a href="@routes.Application.projectInfo()">
-                                        Super&nbsp;图书馆管理系统（结合现代流行元素）</a></div>
+                                        Super&nbsp;图书馆管理系统（结合现代流行元素）</a>
+                                    </div>
                                     <div class="member_col">灿&nbsp;烈</div>
                                     <div class="grade_col">9.9</div>
                                 </li>
                                 <li class="clearfix">
                                     <div class="id_col">001</div>
                                     <div class="name_col"><a href="@routes.Application.projectInfo()">
-                                        Super&nbsp;图书馆管理系统（结合现代流行元素）</a></div>
+                                        Super&nbsp;图书馆管理系统（结合现代流行元素）</a>
+                                    </div>
                                     <div class="member_col">灿&nbsp;烈</div>
                                     <div class="grade_col">9.9</div>
                                 </li>
                                 <li class="clearfix">
                                     <div class="id_col">001</div>
                                     <div class="name_col"><a href="@routes.Application.projectInfo()">
-                                        Super&nbsp;图书馆管理系统（结合现代流行元素）</a></div>
+                                        Super&nbsp;图书馆管理系统（结合现代流行元素）</a>
+                                    </div>
                                     <div class="member_col">灿&nbsp;烈</div>
                                     <div class="grade_col">9.9</div>
                                 </li>
                                 <li class="clearfix">
                                     <div class="id_col">001</div>
                                     <div class="name_col"><a href="@routes.Application.projectInfo()">
-                                        Super&nbsp;图书馆管理系统（结合现代流行元素）</a></div>
+                                        Super&nbsp;图书馆管理系统（结合现代流行元素）</a>
+                                    </div>
                                     <div class="member_col">灿&nbsp;烈</div>
                                     <div class="grade_col">9.9</div>
                                 </li>
@@ -167,28 +165,32 @@
                                 <li class="clearfix">
                                     <div class="id_col">001</div>
                                     <div class="name_col"><a href="@routes.Application.projectInfo()">
-                                        Super&nbsp;图书馆管理系统（结合现代流行元素）</a></div>
+                                        Super&nbsp;图书馆管理系统（结合现代流行元素）</a>
+                                    </div>
                                     <div class="member_col">灿&nbsp;烈</div>
                                     <div class="grade_col">9.9</div>
                                 </li>
                                 <li class="clearfix">
                                     <div class="id_col">001</div>
                                     <div class="name_col"><a href="@routes.Application.projectInfo()">
-                                        Super&nbsp;图书馆管理系统（结合现代流行元素）</a></div>
+                                        Super&nbsp;图书馆管理系统（结合现代流行元素）</a>
+                                    </div>
                                     <div class="member_col">灿&nbsp;烈</div>
                                     <div class="grade_col">9.9</div>
                                 </li>
                                 <li class="clearfix">
                                     <div class="id_col">001</div>
                                     <div class="name_col"><a href="@routes.Application.projectInfo()">
-                                        Super&nbsp;图书馆管理系统（结合现代流行元素）</a></div>
+                                        Super&nbsp;图书馆管理系统（结合现代流行元素）</a>
+                                    </div>
                                     <div class="member_col">灿&nbsp;烈</div>
                                     <div class="grade_col">9.9</div>
                                 </li>
                                 <li class="clearfix">
                                     <div class="id_col">001</div>
                                     <div class="name_col"><a href="@routes.Application.projectInfo()">
-                                        Super&nbsp;图书馆管理系统（结合现代流行元素）</a></div>
+                                        Super&nbsp;图书馆管理系统（结合现代流行元素）</a>
+                                    </div>
                                     <div class="member_col">灿&nbsp;烈</div>
                                     <div class="grade_col">9.9</div>
                                 </li>
@@ -203,28 +205,32 @@
                                 <li class="clearfix">
                                     <div class="id_col">001</div>
                                     <div class="name_col"><a href="@routes.Application.projectInfo()">
-                                        Super&nbsp;图书馆管理系统（结合现代流行元素）</a></div>
+                                        Super&nbsp;图书馆管理系统（结合现代流行元素）</a>
+                                    </div>
                                     <div class="member_col">灿&nbsp;烈</div>
                                     <div class="grade_col">9.9</div>
                                 </li>
                                 <li class="clearfix">
                                     <div class="id_col">001</div>
                                     <div class="name_col"><a href="@routes.Application.projectInfo()">
-                                        Super&nbsp;图书馆管理系统（结合现代流行元素）</a></div>
+                                        Super&nbsp;图书馆管理系统（结合现代流行元素）</a>
+                                    </div>
                                     <div class="member_col">灿&nbsp;烈</div>
                                     <div class="grade_col">9.9</div>
                                 </li>
                                 <li class="clearfix">
                                     <div class="id_col">001</div>
                                     <div class="name_col"><a href="@routes.Application.projectInfo()">
-                                        Super&nbsp;图书馆管理系统（结合现代流行元素）</a></div>
+                                        Super&nbsp;图书馆管理系统（结合现代流行元素）</a>
+                                    </div>
                                     <div class="member_col">灿&nbsp;烈</div>
                                     <div class="grade_col">9.9</div>
                                 </li>
                                 <li class="clearfix">
                                     <div class="id_col">001</div>
                                     <div class="name_col"><a href="@routes.Application.projectInfo()">
-                                        Super&nbsp;图书馆管理系统（结合现代流行元素）</a></div>
+                                        Super&nbsp;图书馆管理系统（结合现代流行元素）</a>
+                                    </div>
                                     <div class="member_col">灿&nbsp;烈</div>
                                     <div class="grade_col">9.9</div>
                                 </li>

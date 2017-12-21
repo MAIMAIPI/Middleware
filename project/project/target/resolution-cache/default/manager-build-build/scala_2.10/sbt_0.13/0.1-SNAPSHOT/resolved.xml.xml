@@ -4,7 +4,7 @@
 		module="manager-build-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20171219205718"
+		publication="20171221205812"
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>

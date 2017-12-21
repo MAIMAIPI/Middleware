@@ -29,7 +29,7 @@ class Application @Inject()(cc: MessagesControllerComponents, ws: WSClient)
   }
 
   def allProject: Action[AnyContent] = Action.async {
-    Future.successful(Ok(views.html.common.AllProjcet()))
+    ws.url(BATCH).get.map(_.json.as[Seq[Batches]]).map(data => Ok(views.html.common.AllProjcet(data)))
   }
 
 }
