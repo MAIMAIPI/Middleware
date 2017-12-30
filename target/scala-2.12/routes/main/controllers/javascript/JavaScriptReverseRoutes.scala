@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/fan/sbtProject/MANAGER/conf/routes
-// @DATE:Tue Dec 19 21:30:04 CST 2017
+// @DATE:Sat Dec 30 14:23:35 CST 2017
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -11,7 +11,7 @@ import _root_.controllers.Assets.Asset
 // @LINE:5
 package controllers.javascript {
 
-  // @LINE:14
+  // @LINE:16
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -19,12 +19,32 @@ package controllers.javascript {
     }
 
   
-    // @LINE:14
+    // @LINE:16
     def at: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.at",
       """
         function(file1) {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "assets/" + (""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("file", file1)})
+        }
+      """
+    )
+  
+  }
+
+  // @LINE:13
+  class ReverseApi(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:13
+    def SelectProjectPageByBatch: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.Api.SelectProjectPageByBatch",
+      """
+        function(bid0,page1) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "selectProjectPageByBatch" + _qS([(""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("bid", bid0), (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("page", page1)])})
         }
       """
     )

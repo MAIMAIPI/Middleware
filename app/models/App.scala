@@ -7,5 +7,5 @@ object App {
 
   val BATCH: String = SOURCE_URL + "jsu/project/selectAll"
 
-
+  val SELECT_PROJECT_PAGE_BY_PATCH = SOURCE_URL + "jsu/project/selectProjectPageByBatch"
 }

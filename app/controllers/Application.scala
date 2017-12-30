@@ -5,7 +5,6 @@ import javax.inject._
 import play.api.mvc._
 import models.Format._
 import models._
-import play.api.libs.json.Json
 import play.api.libs.ws.WSClient
 import App._
 

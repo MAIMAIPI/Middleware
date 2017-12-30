@@ -53,10 +53,11 @@ Seq[Any](format.raw/*1.25*/("""
         <script src=""""),_display_(/*28.23*/routes/*28.29*/.Assets.at("js/moment-2.2.1.js")),format.raw/*28.61*/("""" type="text/javascript"></script>
         <script src=""""),_display_(/*29.23*/routes/*29.29*/.Assets.at("js/clndr.js")),format.raw/*29.54*/("""" type="text/javascript"></script>
         <script src=""""),_display_(/*30.23*/routes/*30.29*/.Assets.at("js/site.js")),format.raw/*30.53*/("""" type="text/javascript"></script>
-    """)))}),format.raw/*31.6*/("""
-"""),format.raw/*32.1*/("""<body>
-    """),_display_(/*33.6*/nav()),format.raw/*33.11*/("""
-        """),format.raw/*34.9*/("""<!-- banner -->
+        <link rel="stylesheet" href=""""),_display_(/*31.39*/routes/*31.45*/.Assets.at("layui/css/layui.css")),format.raw/*31.78*/(""""/>
+    """)))}),format.raw/*32.6*/("""
+"""),format.raw/*33.1*/("""<body>
+    """),_display_(/*34.6*/nav()),format.raw/*34.11*/("""
+        """),format.raw/*35.9*/("""<!-- banner -->
     <div class="allProject_banner">
         <div class="container">
             <h3>所有信息</h3>
@@ -66,7 +67,7 @@ Seq[Any](format.raw/*1.25*/("""
             </p>
             <div class="breadcrumb1">
                 <ul>
-                    <li class="icon6"><a href=""""),_display_(/*44.49*/routes/*44.55*/.Application.index()),format.raw/*44.75*/("""">首页</a></li>
+                    <li class="icon6"><a href=""""),_display_(/*45.49*/routes/*45.55*/.Application.index()),format.raw/*45.75*/("""">首页</a></li>
                     <li class="current-page">项目管理展示</li>
                 </ul>
             </div>
@@ -79,32 +80,32 @@ Seq[Any](format.raw/*1.25*/("""
                 <div class="leftmain">
                     <div class="west">
                         <ul>
-                            """),_display_(/*57.30*/for(batch <- batches) yield /*57.51*/ {_display_(Seq[Any](format.raw/*57.53*/("""
-                                """),format.raw/*58.33*/("""<li class="account1">
-                                    <a id="west1" class="actived">
-                                        <i class="fa fa-tasks"></i>
-                                        <span>"""),_display_(/*61.48*/batch/*61.53*/.year),format.raw/*61.58*/(""" """),format.raw/*61.59*/("""年</span>
-                                        <i class="fa fa-angle-down"></i>
-                                    </a>
-                                </li>
+                        """),_display_(/*58.26*/for(batch <- batches) yield /*58.47*/ {_display_(Seq[Any](format.raw/*58.49*/("""
+                            """),format.raw/*59.29*/("""<li class="account1">
+                                <a id="west1">
+                                    <i class="fa fa-tasks"></i>
+                                    <span>"""),_display_(/*62.44*/batch/*62.49*/.year),format.raw/*62.54*/(""" """),format.raw/*62.55*/("""年</span>
+                                    <i class="fa fa-angle-down"></i>
+                                </a>
+                            </li>
 
-                                <div class="submenu1" style="display: none; ">
-                                    <ul class="root">
-                                    """),_display_(/*68.38*/for(batchItem <- batch.batchList) yield /*68.71*/ {_display_(Seq[Any](format.raw/*68.73*/("""
-                                        """),format.raw/*69.41*/("""<li>
-                                            <a id="batch """),_display_(/*70.59*/batchItem/*70.68*/.bid),format.raw/*70.72*/("""" class="actived">
-                                                <i class="fa fa-leaf"></i>
-                                                <span>"""),_display_(/*72.56*/{
-                                                    batchItem.level + batchItem.name + "学期"
-                                                }),format.raw/*74.50*/("""</span>
-                                                <i class="fa fa-angle-right"></i>
-                                            </a>
-                                        </li>
-                                    """)))}),format.raw/*78.38*/("""
-                                    """),format.raw/*79.37*/("""</ul>
-                                </div>
-                            """)))}),format.raw/*81.30*/("""
-                        """),format.raw/*82.25*/("""</ul>
+                            <div class="submenu1" style="display: none; ">
+                                <ul class="root">
+                                """),_display_(/*69.34*/for(batchItem <- batch.batchList) yield /*69.67*/ {_display_(Seq[Any](format.raw/*69.69*/("""
+                                    """),format.raw/*70.37*/("""<li>
+                                        <a class="tag" id=""""),_display_(/*71.61*/batchItem/*71.70*/.bid),format.raw/*71.74*/("""">
+                                            <i class="fa fa-leaf"></i>
+                                            <span>"""),_display_(/*73.52*/{
+                                                batchItem.level + batchItem.name + "学期"
+                                            }),format.raw/*75.46*/("""</span>
+                                            <i class="fa fa-angle-right"></i>
+                                        </a>
+                                    </li>
+                                """)))}),format.raw/*79.34*/("""
+                                """),format.raw/*80.33*/("""</ul>
+                            </div>
+                        """)))}),format.raw/*82.26*/("""
+                        """),format.raw/*83.25*/("""</ul>
                     </div>
                 </div>
             </div>
@@ -138,6 +139,7 @@ Seq[Any](format.raw/*1.25*/("""
                         </li>
 
                     </ul>
+
                     <div class="tab-content">
                         <div class="table-header clearfix">
                             <div class="id_col">序号</div>
@@ -149,7 +151,7 @@ Seq[Any](format.raw/*1.25*/("""
                             <ul class="table-list">
                                 <li class="clearfix">
                                     <div class="id_col">001</div>
-                                    <div class="name_col"><a href=""""),_display_(/*127.69*/routes/*127.75*/.Application.projectInfo()),format.raw/*127.101*/("""">
+                                    <div class="name_col"><a href=""""),_display_(/*129.69*/routes/*129.75*/.Application.projectInfo()),format.raw/*129.101*/("""">
                                         Super&nbsp;图书馆管理系统（结合现代流行元素）</a>
                                     </div>
                                     <div class="member_col">灿&nbsp;烈</div>
@@ -157,7 +159,7 @@ Seq[Any](format.raw/*1.25*/("""
                                 </li>
                                 <li class="clearfix">
                                     <div class="id_col">001</div>
-                                    <div class="name_col"><a href=""""),_display_(/*135.69*/routes/*135.75*/.Application.projectInfo()),format.raw/*135.101*/("""">
+                                    <div class="name_col"><a href=""""),_display_(/*137.69*/routes/*137.75*/.Application.projectInfo()),format.raw/*137.101*/("""">
                                         Super&nbsp;图书馆管理系统（结合现代流行元素）</a>
                                     </div>
                                     <div class="member_col">灿&nbsp;烈</div>
@@ -165,7 +167,7 @@ Seq[Any](format.raw/*1.25*/("""
                                 </li>
                                 <li class="clearfix">
                                     <div class="id_col">001</div>
-                                    <div class="name_col"><a href=""""),_display_(/*143.69*/routes/*143.75*/.Application.projectInfo()),format.raw/*143.101*/("""">
+                                    <div class="name_col"><a href=""""),_display_(/*145.69*/routes/*145.75*/.Application.projectInfo()),format.raw/*145.101*/("""">
                                         Super&nbsp;图书馆管理系统（结合现代流行元素）</a>
                                     </div>
                                     <div class="member_col">灿&nbsp;烈</div>
@@ -173,23 +175,20 @@ Seq[Any](format.raw/*1.25*/("""
                                 </li>
                                 <li class="clearfix">
                                     <div class="id_col">001</div>
-                                    <div class="name_col"><a href=""""),_display_(/*151.69*/routes/*151.75*/.Application.projectInfo()),format.raw/*151.101*/("""">
+                                    <div class="name_col"><a href=""""),_display_(/*153.69*/routes/*153.75*/.Application.projectInfo()),format.raw/*153.101*/("""">
                                         Super&nbsp;图书馆管理系统（结合现代流行元素）</a>
                                     </div>
                                     <div class="member_col">灿&nbsp;烈</div>
                                     <div class="grade_col">9.9</div>
                                 </li>
                             </ul>
-                            <ul class="pagination event_pagination">
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                            </ul>
+                            <div id="demo7" style="text-align: center"></div>
                         </div>
                         <div class="tab-pane fade" id="qzjj">
                             <ul class="table-list">
                                 <li class="clearfix">
                                     <div class="id_col">001</div>
-                                    <div class="name_col"><a href=""""),_display_(/*167.69*/routes/*167.75*/.Application.projectInfo()),format.raw/*167.101*/("""">
+                                    <div class="name_col"><a href=""""),_display_(/*166.69*/routes/*166.75*/.Application.projectInfo()),format.raw/*166.101*/("""">
                                         Super&nbsp;图书馆管理系统（结合现代流行元素）</a>
                                     </div>
                                     <div class="member_col">灿&nbsp;烈</div>
@@ -197,7 +196,7 @@ Seq[Any](format.raw/*1.25*/("""
                                 </li>
                                 <li class="clearfix">
                                     <div class="id_col">001</div>
-                                    <div class="name_col"><a href=""""),_display_(/*175.69*/routes/*175.75*/.Application.projectInfo()),format.raw/*175.101*/("""">
+                                    <div class="name_col"><a href=""""),_display_(/*174.69*/routes/*174.75*/.Application.projectInfo()),format.raw/*174.101*/("""">
                                         Super&nbsp;图书馆管理系统（结合现代流行元素）</a>
                                     </div>
                                     <div class="member_col">灿&nbsp;烈</div>
@@ -205,7 +204,7 @@ Seq[Any](format.raw/*1.25*/("""
                                 </li>
                                 <li class="clearfix">
                                     <div class="id_col">001</div>
-                                    <div class="name_col"><a href=""""),_display_(/*183.69*/routes/*183.75*/.Application.projectInfo()),format.raw/*183.101*/("""">
+                                    <div class="name_col"><a href=""""),_display_(/*182.69*/routes/*182.75*/.Application.projectInfo()),format.raw/*182.101*/("""">
                                         Super&nbsp;图书馆管理系统（结合现代流行元素）</a>
                                     </div>
                                     <div class="member_col">灿&nbsp;烈</div>
@@ -213,23 +212,20 @@ Seq[Any](format.raw/*1.25*/("""
                                 </li>
                                 <li class="clearfix">
                                     <div class="id_col">001</div>
-                                    <div class="name_col"><a href=""""),_display_(/*191.69*/routes/*191.75*/.Application.projectInfo()),format.raw/*191.101*/("""">
+                                    <div class="name_col"><a href=""""),_display_(/*190.69*/routes/*190.75*/.Application.projectInfo()),format.raw/*190.101*/("""">
                                         Super&nbsp;图书馆管理系统（结合现代流行元素）</a>
                                     </div>
                                     <div class="member_col">灿&nbsp;烈</div>
                                     <div class="grade_col">9.9</div>
                                 </li>
                             </ul>
-                            <ul class="pagination event_pagination">
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                            </ul>
+                            <div id="demo7"></div>
                         </div>
                         <div class="tab-pane fade" id="mqjj">
                             <ul class="table-list">
                                 <li class="clearfix">
                                     <div class="id_col">001</div>
-                                    <div class="name_col"><a href=""""),_display_(/*207.69*/routes/*207.75*/.Application.projectInfo()),format.raw/*207.101*/("""">
+                                    <div class="name_col"><a href=""""),_display_(/*203.69*/routes/*203.75*/.Application.projectInfo()),format.raw/*203.101*/("""">
                                         Super&nbsp;图书馆管理系统（结合现代流行元素）</a>
                                     </div>
                                     <div class="member_col">灿&nbsp;烈</div>
@@ -237,7 +233,7 @@ Seq[Any](format.raw/*1.25*/("""
                                 </li>
                                 <li class="clearfix">
                                     <div class="id_col">001</div>
-                                    <div class="name_col"><a href=""""),_display_(/*215.69*/routes/*215.75*/.Application.projectInfo()),format.raw/*215.101*/("""">
+                                    <div class="name_col"><a href=""""),_display_(/*211.69*/routes/*211.75*/.Application.projectInfo()),format.raw/*211.101*/("""">
                                         Super&nbsp;图书馆管理系统（结合现代流行元素）</a>
                                     </div>
                                     <div class="member_col">灿&nbsp;烈</div>
@@ -245,7 +241,7 @@ Seq[Any](format.raw/*1.25*/("""
                                 </li>
                                 <li class="clearfix">
                                     <div class="id_col">001</div>
-                                    <div class="name_col"><a href=""""),_display_(/*223.69*/routes/*223.75*/.Application.projectInfo()),format.raw/*223.101*/("""">
+                                    <div class="name_col"><a href=""""),_display_(/*219.69*/routes/*219.75*/.Application.projectInfo()),format.raw/*219.101*/("""">
                                         Super&nbsp;图书馆管理系统（结合现代流行元素）</a>
                                     </div>
                                     <div class="member_col">灿&nbsp;烈</div>
@@ -253,17 +249,14 @@ Seq[Any](format.raw/*1.25*/("""
                                 </li>
                                 <li class="clearfix">
                                     <div class="id_col">001</div>
-                                    <div class="name_col"><a href=""""),_display_(/*231.69*/routes/*231.75*/.Application.projectInfo()),format.raw/*231.101*/("""">
+                                    <div class="name_col"><a href=""""),_display_(/*227.69*/routes/*227.75*/.Application.projectInfo()),format.raw/*227.101*/("""">
                                         Super&nbsp;图书馆管理系统（结合现代流行元素）</a>
                                     </div>
                                     <div class="member_col">灿&nbsp;烈</div>
                                     <div class="grade_col">9.9</div>
                                 </li>
                             </ul>
-                            <ul class="pagination event_pagination">
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                            </ul>
+                            <div id="demo7"></div>
                         </div>
                     </div>
                 </div>
@@ -271,23 +264,21 @@ Seq[Any](format.raw/*1.25*/("""
             <div class="clearfix"></div>
         </div>
     </div>
-    """),_display_(/*249.6*/footer()),format.raw/*249.14*/("""
-        """),format.raw/*250.9*/("""<!-- FlexSlider -->
-    <link href=""""),_display_(/*251.18*/routes/*251.24*/.Assets.at("css/flexslider.css")),format.raw/*251.56*/("""" rel='stylesheet' type='text/css'/>
-    <script defer src=""""),_display_(/*252.25*/routes/*252.31*/.Assets.at("js/jquery.flexslider.js")),format.raw/*252.68*/(""""></script>
-    <script src=""""),_display_(/*253.19*/routes/*253.25*/.Assets.at("js/allResources.js")),format.raw/*253.57*/(""""></script>
+    """),_display_(/*242.6*/footer()),format.raw/*242.14*/("""
+        """),format.raw/*243.9*/("""<!-- FlexSlider -->
+    <link href=""""),_display_(/*244.18*/routes/*244.24*/.Assets.at("css/flexslider.css")),format.raw/*244.56*/("""" rel='stylesheet' type='text/css'/>
+    <script defer src=""""),_display_(/*245.25*/routes/*245.31*/.Assets.at("js/jquery.flexslider.js")),format.raw/*245.68*/(""""></script>
+    <script src=""""),_display_(/*246.19*/routes/*246.25*/.Assets.at("layui/layui.js")),format.raw/*246.53*/(""""></script>
+    <script src=""""),_display_(/*247.19*/routes/*247.25*/.Assets.at("js/allResources.js")),format.raw/*247.57*/(""""></script>
 <script type="text/javascript">
-        $(function () """),format.raw/*255.23*/("""{"""),format.raw/*255.24*/("""
-            """),format.raw/*256.13*/("""SyntaxHighlighter.all();
-        """),format.raw/*257.9*/("""}"""),format.raw/*257.10*/(""");
-        $(window).load(function () """),format.raw/*258.36*/("""{"""),format.raw/*258.37*/("""
-            """),format.raw/*259.13*/("""$('.flexslider').flexslider("""),format.raw/*259.41*/("""{"""),format.raw/*259.42*/("""
-                """),format.raw/*260.17*/("""animation: "slide",
-                start: function (slider) """),format.raw/*261.42*/("""{"""),format.raw/*261.43*/("""
-                    """),format.raw/*262.21*/("""$('body').removeClass('loading');
-                """),format.raw/*263.17*/("""}"""),format.raw/*263.18*/("""
-            """),format.raw/*264.13*/("""}"""),format.raw/*264.14*/(""");
-        """),format.raw/*265.9*/("""}"""),format.raw/*265.10*/(""");
+        $(window).load(function () """),format.raw/*249.36*/("""{"""),format.raw/*249.37*/("""
+            """),format.raw/*250.13*/("""$('.flexslider').flexslider("""),format.raw/*250.41*/("""{"""),format.raw/*250.42*/("""
+                """),format.raw/*251.17*/("""animation: "slide",
+                start: function (slider) """),format.raw/*252.42*/("""{"""),format.raw/*252.43*/("""
+                    """),format.raw/*253.21*/("""$('body').removeClass('loading');
+                """),format.raw/*254.17*/("""}"""),format.raw/*254.18*/("""
+            """),format.raw/*255.13*/("""}"""),format.raw/*255.14*/(""");
+        """),format.raw/*256.9*/("""}"""),format.raw/*256.10*/(""");
 </script>
     <!-- FlexSlider -->
 </body>
@@ -307,11 +298,11 @@ Seq[Any](format.raw/*1.25*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Thu Dec 21 21:38:05 CST 2017
+                  DATE: Sat Dec 30 16:27:54 CST 2017
                   SOURCE: /home/fan/sbtProject/MANAGER/app/views/common/AllProjcet.scala.html
-                  HASH: a8b444a192af9e8ace141aecc9970958a31ce59d
-                  MATRIX: 747->1|865->24|893->26|946->54|968->68|1007->70|1047->83|1105->115|1119->121|1165->147|1249->205|1263->211|1315->243|1467->367|1496->368|1545->389|1635->451|1664->452|1725->485|1904->636|1933->637|2003->679|2032->680|2093->713|2270->862|2299->863|2348->884|2395->903|2424->904|2547->1000|2562->1006|2610->1033|2679->1075|2694->1081|2749->1115|2833->1172|2848->1178|2901->1210|2985->1267|3000->1273|3046->1298|3130->1355|3145->1361|3190->1385|3260->1425|3288->1426|3326->1438|3352->1443|3388->1452|3924->1961|3939->1967|3980->1987|4408->2388|4445->2409|4485->2411|4546->2444|4777->2648|4791->2653|4817->2658|4846->2659|5205->2991|5254->3024|5294->3026|5363->3067|5453->3130|5471->3139|5496->3143|5672->3292|5836->3435|6089->3657|6154->3694|6259->3768|6312->3793|8655->6108|8671->6114|8720->6140|9237->6629|9253->6635|9302->6661|9819->7150|9835->7156|9884->7182|10401->7671|10417->7677|10466->7703|11398->8607|11414->8613|11463->8639|11980->9128|11996->9134|12045->9160|12562->9649|12578->9655|12627->9681|13144->10170|13160->10176|13209->10202|14141->11106|14157->11112|14206->11138|14723->11627|14739->11633|14788->11659|15305->12148|15321->12154|15370->12180|15887->12669|15903->12675|15952->12701|16722->13444|16752->13452|16789->13461|16854->13498|16870->13504|16924->13536|17013->13597|17029->13603|17088->13640|17146->13670|17162->13676|17216->13708|17311->13774|17341->13775|17383->13788|17444->13821|17474->13822|17541->13860|17571->13861|17613->13874|17670->13902|17700->13903|17746->13920|17836->13981|17866->13982|17916->14003|17995->14053|18025->14054|18067->14067|18097->14068|18136->14079|18166->14080
-                  LINES: 21->1|26->1|28->3|30->5|30->5|30->5|31->6|32->7|32->7|32->7|33->8|33->8|33->8|37->12|37->12|38->13|39->14|39->14|40->15|42->17|42->17|43->18|43->18|44->19|46->21|46->21|47->22|48->23|48->23|51->26|51->26|51->26|52->27|52->27|52->27|53->28|53->28|53->28|54->29|54->29|54->29|55->30|55->30|55->30|56->31|57->32|58->33|58->33|59->34|69->44|69->44|69->44|82->57|82->57|82->57|83->58|86->61|86->61|86->61|86->61|93->68|93->68|93->68|94->69|95->70|95->70|95->70|97->72|99->74|103->78|104->79|106->81|107->82|152->127|152->127|152->127|160->135|160->135|160->135|168->143|168->143|168->143|176->151|176->151|176->151|192->167|192->167|192->167|200->175|200->175|200->175|208->183|208->183|208->183|216->191|216->191|216->191|232->207|232->207|232->207|240->215|240->215|240->215|248->223|248->223|248->223|256->231|256->231|256->231|274->249|274->249|275->250|276->251|276->251|276->251|277->252|277->252|277->252|278->253|278->253|278->253|280->255|280->255|281->256|282->257|282->257|283->258|283->258|284->259|284->259|284->259|285->260|286->261|286->261|287->262|288->263|288->263|289->264|289->264|290->265|290->265
+                  HASH: 351e7a5ebfca8519fff4a08f31d30343c553a4e4
+                  MATRIX: 747->1|865->24|893->26|946->54|968->68|1007->70|1047->83|1105->115|1119->121|1165->147|1249->205|1263->211|1315->243|1467->367|1496->368|1545->389|1635->451|1664->452|1725->485|1904->636|1933->637|2003->679|2032->680|2093->713|2270->862|2299->863|2348->884|2395->903|2424->904|2547->1000|2562->1006|2610->1033|2679->1075|2694->1081|2749->1115|2833->1172|2848->1178|2901->1210|2985->1267|3000->1273|3046->1298|3130->1355|3145->1361|3190->1385|3290->1458|3305->1464|3359->1497|3398->1506|3426->1507|3464->1519|3490->1524|3526->1533|4062->2042|4077->2048|4118->2068|4542->2465|4579->2486|4619->2488|4676->2517|4879->2693|4893->2698|4919->2703|4948->2704|5283->3012|5332->3045|5372->3047|5437->3084|5529->3149|5547->3158|5572->3162|5724->3287|5880->3422|6117->3628|6178->3661|6275->3727|6328->3752|8672->6068|8688->6074|8737->6100|9254->6589|9270->6595|9319->6621|9836->7110|9852->7116|9901->7142|10418->7631|10434->7637|10483->7663|11257->8409|11273->8415|11322->8441|11839->8930|11855->8936|11904->8962|12421->9451|12437->9457|12486->9483|13003->9972|13019->9978|13068->10004|13815->10723|13831->10729|13880->10755|14397->11244|14413->11250|14462->11276|14979->11765|14995->11771|15044->11797|15561->12286|15577->12292|15626->12318|16211->12876|16241->12884|16278->12893|16343->12930|16359->12936|16413->12968|16502->13029|16518->13035|16577->13072|16635->13102|16651->13108|16701->13136|16759->13166|16775->13172|16829->13204|16937->13283|16967->13284|17009->13297|17066->13325|17096->13326|17142->13343|17232->13404|17262->13405|17312->13426|17391->13476|17421->13477|17463->13490|17493->13491|17532->13502|17562->13503
+                  LINES: 21->1|26->1|28->3|30->5|30->5|30->5|31->6|32->7|32->7|32->7|33->8|33->8|33->8|37->12|37->12|38->13|39->14|39->14|40->15|42->17|42->17|43->18|43->18|44->19|46->21|46->21|47->22|48->23|48->23|51->26|51->26|51->26|52->27|52->27|52->27|53->28|53->28|53->28|54->29|54->29|54->29|55->30|55->30|55->30|56->31|56->31|56->31|57->32|58->33|59->34|59->34|60->35|70->45|70->45|70->45|83->58|83->58|83->58|84->59|87->62|87->62|87->62|87->62|94->69|94->69|94->69|95->70|96->71|96->71|96->71|98->73|100->75|104->79|105->80|107->82|108->83|154->129|154->129|154->129|162->137|162->137|162->137|170->145|170->145|170->145|178->153|178->153|178->153|191->166|191->166|191->166|199->174|199->174|199->174|207->182|207->182|207->182|215->190|215->190|215->190|228->203|228->203|228->203|236->211|236->211|236->211|244->219|244->219|244->219|252->227|252->227|252->227|267->242|267->242|268->243|269->244|269->244|269->244|270->245|270->245|270->245|271->246|271->246|271->246|272->247|272->247|272->247|274->249|274->249|275->250|275->250|275->250|276->251|277->252|277->252|278->253|279->254|279->254|280->255|280->255|281->256|281->256
                   -- GENERATED --
               */
           

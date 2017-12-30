@@ -2,7 +2,7 @@ package models
 
 case class Person(id: Int, name: String)
 
-/** ***************Help class ******************/
+/** ***************Help Bean *******************/
 
 case class Batches(year: Int, batchList: Seq[Batch])
 

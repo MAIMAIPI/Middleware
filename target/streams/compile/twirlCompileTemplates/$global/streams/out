@@ -1,4 +1,4 @@
-[error] /home/fan/sbtProject/MANAGER/app/views/index.scala.html:428: Expected ending '}'
-[error] </html>
-[error]        ^
+[error] /home/fan/sbtProject/MANAGER/app/views/common/AllProjcet.scala.html:57: Invalid '@' symbol
+[error]                             @
+[error]                             ^
 [error] (compile:twirlCompileTemplates) Twirl compilation failed

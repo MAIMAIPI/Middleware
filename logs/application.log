@@ -1,5 +1,5 @@
-2017-12-21 20:58:29,613 [INFO] from akka.event.slf4j.Slf4jLogger in application-akka.actor.default-dispatcher-3 - Slf4jLogger started
-2017-12-21 20:58:29,883 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-6 - Using the following cache for assets configuration:
+2017-12-30 16:58:34,114 [INFO] from akka.event.slf4j.Slf4jLogger in application-akka.actor.default-dispatcher-2 - Slf4jLogger started
+2017-12-30 16:58:34,553 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-9 - Using the following cache for assets configuration:
 	 enabledCaching = false
 	 enabledCacheControl = false
 	 defaultCacheControl = public, max-age=3600
@@ -7,137 +7,547 @@
 	 configuredCacheControl:
 
 
-2017-12-21 20:58:29,896 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-6 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2017-12-30 16:58:34,571 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-9 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
 
-2017-12-21 20:58:29,900 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-6 - Application started (Dev)
-2017-12-21 21:00:43,622 [INFO] from akka.event.slf4j.Slf4jLogger in application-akka.actor.default-dispatcher-5 - Slf4jLogger started
-2017-12-21 21:00:43,649 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-12 - Using the following cache for assets configuration:
-	 enabledCaching = false
-	 enabledCacheControl = false
-	 defaultCacheControl = public, max-age=3600
-	 aggressiveCacheControl = public, max-age=31536000, immutable
-	 configuredCacheControl:
+2017-12-30 16:58:34,578 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-9 - Application started (Dev)
+2017-12-30 17:11:42,178 [ERROR] from application in application-akka.actor.default-dispatcher-4 - 
 
+! @76f0o4lk5 - Internal server error, for (GET) [/allproject] ->
+ 
+play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[ConnectException: Connection refused: /10.0.0.30:8888]]
+	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:255)
+	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:182)
+	at play.core.server.AkkaHttpServer$$anonfun$$nestedInanonfun$executeHandler$1$1.applyOrElse(AkkaHttpServer.scala:252)
+	at play.core.server.AkkaHttpServer$$anonfun$$nestedInanonfun$executeHandler$1$1.applyOrElse(AkkaHttpServer.scala:251)
+	at scala.concurrent.Future.$anonfun$recoverWith$1(Future.scala:414)
+	at scala.concurrent.impl.Promise.$anonfun$transformWith$1(Promise.scala:37)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
+	at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:70)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:68)
+	at scala.concurrent.impl.Promise$DefaultPromise.$anonfun$tryComplete$1(Promise.scala:284)
+	at scala.concurrent.impl.Promise$DefaultPromise.$anonfun$tryComplete$1$adapted(Promise.scala:284)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:284)
+	at scala.concurrent.Promise.complete(Promise.scala:49)
+	at scala.concurrent.Promise.complete$(Promise.scala:48)
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:183)
+	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:29)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:91)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:12)
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:81)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:91)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:43)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+Caused by: java.net.ConnectException: Connection refused: /10.0.0.30:8888
+	at play.shaded.ahc.org.asynchttpclient.netty.channel.NettyConnectListener.onFailure(NettyConnectListener.java:168)
+	at play.shaded.ahc.org.asynchttpclient.netty.request.NettyChannelConnector$1.onFailure(NettyChannelConnector.java:103)
+	at play.shaded.ahc.org.asynchttpclient.netty.SimpleChannelFutureListener.operationComplete(SimpleChannelFutureListener.java:28)
+	at play.shaded.ahc.org.asynchttpclient.netty.SimpleChannelFutureListener.operationComplete(SimpleChannelFutureListener.java:20)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:507)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:500)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:479)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:420)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:122)
+	at play.shaded.ahc.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:278)
+	at play.shaded.ahc.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:294)
+	at play.shaded.ahc.io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:634)
+	at play.shaded.ahc.io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:581)
+	at play.shaded.ahc.io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:498)
+	at play.shaded.ahc.io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:460)
+	at play.shaded.ahc.io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:131)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:138)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: play.shaded.ahc.io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /10.0.0.30:8888
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at play.shaded.ahc.io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:259)
+	at play.shaded.ahc.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:291)
+	... 7 common frames omitted
+Caused by: java.net.ConnectException: Connection refused
+	... 11 common frames omitted
+2017-12-30 17:16:49,671 [ERROR] from application in application-akka.actor.default-dispatcher-4 - 
 
-2017-12-21 21:00:43,652 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-12 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+! @76f0om8go - Internal server error, for (GET) [/allproject] ->
+ 
+play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[ConnectException: Connection refused: /10.0.0.30:8888]]
+	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:255)
+	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:182)
+	at play.core.server.AkkaHttpServer$$anonfun$$nestedInanonfun$executeHandler$1$1.applyOrElse(AkkaHttpServer.scala:252)
+	at play.core.server.AkkaHttpServer$$anonfun$$nestedInanonfun$executeHandler$1$1.applyOrElse(AkkaHttpServer.scala:251)
+	at scala.concurrent.Future.$anonfun$recoverWith$1(Future.scala:414)
+	at scala.concurrent.impl.Promise.$anonfun$transformWith$1(Promise.scala:37)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
+	at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:70)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:68)
+	at scala.concurrent.impl.Promise$DefaultPromise.$anonfun$tryComplete$1(Promise.scala:284)
+	at scala.concurrent.impl.Promise$DefaultPromise.$anonfun$tryComplete$1$adapted(Promise.scala:284)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:284)
+	at scala.concurrent.Promise.complete(Promise.scala:49)
+	at scala.concurrent.Promise.complete$(Promise.scala:48)
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:183)
+	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:29)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:91)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:12)
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:81)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:91)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:43)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+Caused by: java.net.ConnectException: Connection refused: /10.0.0.30:8888
+	at play.shaded.ahc.org.asynchttpclient.netty.channel.NettyConnectListener.onFailure(NettyConnectListener.java:168)
+	at play.shaded.ahc.org.asynchttpclient.netty.request.NettyChannelConnector$1.onFailure(NettyChannelConnector.java:103)
+	at play.shaded.ahc.org.asynchttpclient.netty.SimpleChannelFutureListener.operationComplete(SimpleChannelFutureListener.java:28)
+	at play.shaded.ahc.org.asynchttpclient.netty.SimpleChannelFutureListener.operationComplete(SimpleChannelFutureListener.java:20)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:507)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:500)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:479)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:420)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:122)
+	at play.shaded.ahc.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:278)
+	at play.shaded.ahc.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:294)
+	at play.shaded.ahc.io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:634)
+	at play.shaded.ahc.io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:581)
+	at play.shaded.ahc.io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:498)
+	at play.shaded.ahc.io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:460)
+	at play.shaded.ahc.io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:131)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:138)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: play.shaded.ahc.io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /10.0.0.30:8888
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at play.shaded.ahc.io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:259)
+	at play.shaded.ahc.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:291)
+	... 7 common frames omitted
+Caused by: java.net.ConnectException: Connection refused
+	... 11 common frames omitted
+2017-12-30 17:20:05,678 [ERROR] from application in application-akka.actor.default-dispatcher-4 - 
 
+! @76f0p7cfh - Internal server error, for (GET) [/allproject] ->
+ 
+play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[ConnectException: Connection refused: /10.0.0.30:8888]]
+	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:255)
+	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:182)
+	at play.core.server.AkkaHttpServer$$anonfun$$nestedInanonfun$executeHandler$1$1.applyOrElse(AkkaHttpServer.scala:252)
+	at play.core.server.AkkaHttpServer$$anonfun$$nestedInanonfun$executeHandler$1$1.applyOrElse(AkkaHttpServer.scala:251)
+	at scala.concurrent.Future.$anonfun$recoverWith$1(Future.scala:414)
+	at scala.concurrent.impl.Promise.$anonfun$transformWith$1(Promise.scala:37)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
+	at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:70)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:68)
+	at scala.concurrent.impl.Promise$DefaultPromise.$anonfun$tryComplete$1(Promise.scala:284)
+	at scala.concurrent.impl.Promise$DefaultPromise.$anonfun$tryComplete$1$adapted(Promise.scala:284)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:284)
+	at scala.concurrent.Promise.complete(Promise.scala:49)
+	at scala.concurrent.Promise.complete$(Promise.scala:48)
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:183)
+	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:29)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:91)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:12)
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:81)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:91)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:43)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+Caused by: java.net.ConnectException: Connection refused: /10.0.0.30:8888
+	at play.shaded.ahc.org.asynchttpclient.netty.channel.NettyConnectListener.onFailure(NettyConnectListener.java:168)
+	at play.shaded.ahc.org.asynchttpclient.netty.request.NettyChannelConnector$1.onFailure(NettyChannelConnector.java:103)
+	at play.shaded.ahc.org.asynchttpclient.netty.SimpleChannelFutureListener.operationComplete(SimpleChannelFutureListener.java:28)
+	at play.shaded.ahc.org.asynchttpclient.netty.SimpleChannelFutureListener.operationComplete(SimpleChannelFutureListener.java:20)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:507)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:500)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:479)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:420)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:122)
+	at play.shaded.ahc.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:278)
+	at play.shaded.ahc.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:294)
+	at play.shaded.ahc.io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:634)
+	at play.shaded.ahc.io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:581)
+	at play.shaded.ahc.io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:498)
+	at play.shaded.ahc.io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:460)
+	at play.shaded.ahc.io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:131)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:138)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: play.shaded.ahc.io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /10.0.0.30:8888
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at play.shaded.ahc.io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:259)
+	at play.shaded.ahc.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:291)
+	... 7 common frames omitted
+Caused by: java.net.ConnectException: Connection refused
+	... 11 common frames omitted
+2017-12-30 17:20:07,124 [ERROR] from application in application-akka.actor.default-dispatcher-4 - 
 
-2017-12-21 21:00:43,652 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-12 - Application started (Dev)
-2017-12-21 21:01:20,159 [INFO] from akka.event.slf4j.Slf4jLogger in application-akka.actor.default-dispatcher-2 - Slf4jLogger started
-2017-12-21 21:01:20,186 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-6 - Using the following cache for assets configuration:
-	 enabledCaching = false
-	 enabledCacheControl = false
-	 defaultCacheControl = public, max-age=3600
-	 aggressiveCacheControl = public, max-age=31536000, immutable
-	 configuredCacheControl:
+! @76f0p7ej7 - Internal server error, for (GET) [/allproject] ->
+ 
+play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[ConnectException: Connection refused: /10.0.0.30:8888]]
+	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:255)
+	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:182)
+	at play.core.server.AkkaHttpServer$$anonfun$$nestedInanonfun$executeHandler$1$1.applyOrElse(AkkaHttpServer.scala:252)
+	at play.core.server.AkkaHttpServer$$anonfun$$nestedInanonfun$executeHandler$1$1.applyOrElse(AkkaHttpServer.scala:251)
+	at scala.concurrent.Future.$anonfun$recoverWith$1(Future.scala:414)
+	at scala.concurrent.impl.Promise.$anonfun$transformWith$1(Promise.scala:37)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
+	at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:70)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:68)
+	at scala.concurrent.impl.Promise$DefaultPromise.$anonfun$tryComplete$1(Promise.scala:284)
+	at scala.concurrent.impl.Promise$DefaultPromise.$anonfun$tryComplete$1$adapted(Promise.scala:284)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:284)
+	at scala.concurrent.Promise.complete(Promise.scala:49)
+	at scala.concurrent.Promise.complete$(Promise.scala:48)
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:183)
+	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:29)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:91)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:12)
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:81)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:91)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:43)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+Caused by: java.net.ConnectException: Connection refused: /10.0.0.30:8888
+	at play.shaded.ahc.org.asynchttpclient.netty.channel.NettyConnectListener.onFailure(NettyConnectListener.java:168)
+	at play.shaded.ahc.org.asynchttpclient.netty.request.NettyChannelConnector$1.onFailure(NettyChannelConnector.java:103)
+	at play.shaded.ahc.org.asynchttpclient.netty.SimpleChannelFutureListener.operationComplete(SimpleChannelFutureListener.java:28)
+	at play.shaded.ahc.org.asynchttpclient.netty.SimpleChannelFutureListener.operationComplete(SimpleChannelFutureListener.java:20)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:507)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:500)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:479)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:420)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:122)
+	at play.shaded.ahc.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:278)
+	at play.shaded.ahc.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:294)
+	at play.shaded.ahc.io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:634)
+	at play.shaded.ahc.io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:581)
+	at play.shaded.ahc.io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:498)
+	at play.shaded.ahc.io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:460)
+	at play.shaded.ahc.io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:131)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:138)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: play.shaded.ahc.io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /10.0.0.30:8888
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at play.shaded.ahc.io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:259)
+	at play.shaded.ahc.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:291)
+	... 7 common frames omitted
+Caused by: java.net.ConnectException: Connection refused
+	... 11 common frames omitted
+2017-12-30 17:20:07,501 [ERROR] from application in application-akka.actor.default-dispatcher-4 - 
 
+! @76f0p7f7j - Internal server error, for (GET) [/allproject] ->
+ 
+play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[ConnectException: Connection refused: /10.0.0.30:8888]]
+	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:255)
+	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:182)
+	at play.core.server.AkkaHttpServer$$anonfun$$nestedInanonfun$executeHandler$1$1.applyOrElse(AkkaHttpServer.scala:252)
+	at play.core.server.AkkaHttpServer$$anonfun$$nestedInanonfun$executeHandler$1$1.applyOrElse(AkkaHttpServer.scala:251)
+	at scala.concurrent.Future.$anonfun$recoverWith$1(Future.scala:414)
+	at scala.concurrent.impl.Promise.$anonfun$transformWith$1(Promise.scala:37)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
+	at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:70)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:68)
+	at scala.concurrent.impl.Promise$DefaultPromise.$anonfun$tryComplete$1(Promise.scala:284)
+	at scala.concurrent.impl.Promise$DefaultPromise.$anonfun$tryComplete$1$adapted(Promise.scala:284)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:284)
+	at scala.concurrent.Promise.complete(Promise.scala:49)
+	at scala.concurrent.Promise.complete$(Promise.scala:48)
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:183)
+	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:29)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:91)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:12)
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:81)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:91)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:43)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+Caused by: java.net.ConnectException: Connection refused: /10.0.0.30:8888
+	at play.shaded.ahc.org.asynchttpclient.netty.channel.NettyConnectListener.onFailure(NettyConnectListener.java:168)
+	at play.shaded.ahc.org.asynchttpclient.netty.request.NettyChannelConnector$1.onFailure(NettyChannelConnector.java:103)
+	at play.shaded.ahc.org.asynchttpclient.netty.SimpleChannelFutureListener.operationComplete(SimpleChannelFutureListener.java:28)
+	at play.shaded.ahc.org.asynchttpclient.netty.SimpleChannelFutureListener.operationComplete(SimpleChannelFutureListener.java:20)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:507)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:500)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:479)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:420)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:122)
+	at play.shaded.ahc.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:278)
+	at play.shaded.ahc.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:294)
+	at play.shaded.ahc.io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:634)
+	at play.shaded.ahc.io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:581)
+	at play.shaded.ahc.io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:498)
+	at play.shaded.ahc.io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:460)
+	at play.shaded.ahc.io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:131)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:138)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: play.shaded.ahc.io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /10.0.0.30:8888
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at play.shaded.ahc.io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:259)
+	at play.shaded.ahc.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:291)
+	... 7 common frames omitted
+Caused by: java.net.ConnectException: Connection refused
+	... 11 common frames omitted
+2017-12-30 17:20:07,682 [ERROR] from application in application-akka.actor.default-dispatcher-4 - 
 
-2017-12-21 21:01:20,188 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-6 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+! @76f0p7fej - Internal server error, for (GET) [/allproject] ->
+ 
+play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[ConnectException: Connection refused: /10.0.0.30:8888]]
+	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:255)
+	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:182)
+	at play.core.server.AkkaHttpServer$$anonfun$$nestedInanonfun$executeHandler$1$1.applyOrElse(AkkaHttpServer.scala:252)
+	at play.core.server.AkkaHttpServer$$anonfun$$nestedInanonfun$executeHandler$1$1.applyOrElse(AkkaHttpServer.scala:251)
+	at scala.concurrent.Future.$anonfun$recoverWith$1(Future.scala:414)
+	at scala.concurrent.impl.Promise.$anonfun$transformWith$1(Promise.scala:37)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
+	at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:70)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:68)
+	at scala.concurrent.impl.Promise$DefaultPromise.$anonfun$tryComplete$1(Promise.scala:284)
+	at scala.concurrent.impl.Promise$DefaultPromise.$anonfun$tryComplete$1$adapted(Promise.scala:284)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:284)
+	at scala.concurrent.Promise.complete(Promise.scala:49)
+	at scala.concurrent.Promise.complete$(Promise.scala:48)
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:183)
+	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:29)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:91)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:12)
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:81)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:91)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:43)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+Caused by: java.net.ConnectException: Connection refused: /10.0.0.30:8888
+	at play.shaded.ahc.org.asynchttpclient.netty.channel.NettyConnectListener.onFailure(NettyConnectListener.java:168)
+	at play.shaded.ahc.org.asynchttpclient.netty.request.NettyChannelConnector$1.onFailure(NettyChannelConnector.java:103)
+	at play.shaded.ahc.org.asynchttpclient.netty.SimpleChannelFutureListener.operationComplete(SimpleChannelFutureListener.java:28)
+	at play.shaded.ahc.org.asynchttpclient.netty.SimpleChannelFutureListener.operationComplete(SimpleChannelFutureListener.java:20)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:507)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:500)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:479)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:420)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:122)
+	at play.shaded.ahc.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:278)
+	at play.shaded.ahc.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:294)
+	at play.shaded.ahc.io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:634)
+	at play.shaded.ahc.io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:581)
+	at play.shaded.ahc.io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:498)
+	at play.shaded.ahc.io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:460)
+	at play.shaded.ahc.io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:131)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:138)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: play.shaded.ahc.io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /10.0.0.30:8888
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at play.shaded.ahc.io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:259)
+	at play.shaded.ahc.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:291)
+	... 7 common frames omitted
+Caused by: java.net.ConnectException: Connection refused
+	... 11 common frames omitted
+2017-12-30 17:20:07,849 [ERROR] from application in application-akka.actor.default-dispatcher-4 - 
 
+! @76f0p7fl3 - Internal server error, for (GET) [/allproject] ->
+ 
+play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[ConnectException: Connection refused: /10.0.0.30:8888]]
+	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:255)
+	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:182)
+	at play.core.server.AkkaHttpServer$$anonfun$$nestedInanonfun$executeHandler$1$1.applyOrElse(AkkaHttpServer.scala:252)
+	at play.core.server.AkkaHttpServer$$anonfun$$nestedInanonfun$executeHandler$1$1.applyOrElse(AkkaHttpServer.scala:251)
+	at scala.concurrent.Future.$anonfun$recoverWith$1(Future.scala:414)
+	at scala.concurrent.impl.Promise.$anonfun$transformWith$1(Promise.scala:37)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
+	at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:70)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:68)
+	at scala.concurrent.impl.Promise$DefaultPromise.$anonfun$tryComplete$1(Promise.scala:284)
+	at scala.concurrent.impl.Promise$DefaultPromise.$anonfun$tryComplete$1$adapted(Promise.scala:284)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:284)
+	at scala.concurrent.Promise.complete(Promise.scala:49)
+	at scala.concurrent.Promise.complete$(Promise.scala:48)
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:183)
+	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:29)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:91)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:12)
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:81)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:91)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:43)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+Caused by: java.net.ConnectException: Connection refused: /10.0.0.30:8888
+	at play.shaded.ahc.org.asynchttpclient.netty.channel.NettyConnectListener.onFailure(NettyConnectListener.java:168)
+	at play.shaded.ahc.org.asynchttpclient.netty.request.NettyChannelConnector$1.onFailure(NettyChannelConnector.java:103)
+	at play.shaded.ahc.org.asynchttpclient.netty.SimpleChannelFutureListener.operationComplete(SimpleChannelFutureListener.java:28)
+	at play.shaded.ahc.org.asynchttpclient.netty.SimpleChannelFutureListener.operationComplete(SimpleChannelFutureListener.java:20)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:507)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:500)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:479)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:420)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:122)
+	at play.shaded.ahc.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:278)
+	at play.shaded.ahc.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:294)
+	at play.shaded.ahc.io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:634)
+	at play.shaded.ahc.io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:581)
+	at play.shaded.ahc.io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:498)
+	at play.shaded.ahc.io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:460)
+	at play.shaded.ahc.io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:131)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:138)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: play.shaded.ahc.io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /10.0.0.30:8888
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at play.shaded.ahc.io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:259)
+	at play.shaded.ahc.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:291)
+	... 7 common frames omitted
+Caused by: java.net.ConnectException: Connection refused
+	... 11 common frames omitted
+2017-12-30 17:20:08,029 [ERROR] from application in application-akka.actor.default-dispatcher-4 - 
 
-2017-12-21 21:01:20,189 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-6 - Application started (Dev)
-2017-12-21 21:02:57,953 [INFO] from akka.event.slf4j.Slf4jLogger in application-akka.actor.default-dispatcher-3 - Slf4jLogger started
-2017-12-21 21:02:57,973 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-18 - Using the following cache for assets configuration:
-	 enabledCaching = false
-	 enabledCacheControl = false
-	 defaultCacheControl = public, max-age=3600
-	 aggressiveCacheControl = public, max-age=31536000, immutable
-	 configuredCacheControl:
+! @76f0p7g22 - Internal server error, for (GET) [/allproject] ->
+ 
+play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[ConnectException: Connection refused: /10.0.0.30:8888]]
+	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:255)
+	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:182)
+	at play.core.server.AkkaHttpServer$$anonfun$$nestedInanonfun$executeHandler$1$1.applyOrElse(AkkaHttpServer.scala:252)
+	at play.core.server.AkkaHttpServer$$anonfun$$nestedInanonfun$executeHandler$1$1.applyOrElse(AkkaHttpServer.scala:251)
+	at scala.concurrent.Future.$anonfun$recoverWith$1(Future.scala:414)
+	at scala.concurrent.impl.Promise.$anonfun$transformWith$1(Promise.scala:37)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
+	at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:70)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:68)
+	at scala.concurrent.impl.Promise$DefaultPromise.$anonfun$tryComplete$1(Promise.scala:284)
+	at scala.concurrent.impl.Promise$DefaultPromise.$anonfun$tryComplete$1$adapted(Promise.scala:284)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:284)
+	at scala.concurrent.Promise.complete(Promise.scala:49)
+	at scala.concurrent.Promise.complete$(Promise.scala:48)
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:183)
+	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:29)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:91)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:12)
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:81)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:91)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:43)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+Caused by: java.net.ConnectException: Connection refused: /10.0.0.30:8888
+	at play.shaded.ahc.org.asynchttpclient.netty.channel.NettyConnectListener.onFailure(NettyConnectListener.java:168)
+	at play.shaded.ahc.org.asynchttpclient.netty.request.NettyChannelConnector$1.onFailure(NettyChannelConnector.java:103)
+	at play.shaded.ahc.org.asynchttpclient.netty.SimpleChannelFutureListener.operationComplete(SimpleChannelFutureListener.java:28)
+	at play.shaded.ahc.org.asynchttpclient.netty.SimpleChannelFutureListener.operationComplete(SimpleChannelFutureListener.java:20)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:507)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:500)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:479)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:420)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:122)
+	at play.shaded.ahc.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:278)
+	at play.shaded.ahc.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:294)
+	at play.shaded.ahc.io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:634)
+	at play.shaded.ahc.io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:581)
+	at play.shaded.ahc.io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:498)
+	at play.shaded.ahc.io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:460)
+	at play.shaded.ahc.io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:131)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:138)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: play.shaded.ahc.io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /10.0.0.30:8888
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at play.shaded.ahc.io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:259)
+	at play.shaded.ahc.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:291)
+	... 7 common frames omitted
+Caused by: java.net.ConnectException: Connection refused
+	... 11 common frames omitted
+2017-12-30 17:20:08,202 [ERROR] from application in application-akka.actor.default-dispatcher-4 - 
 
-
-2017-12-21 21:02:57,976 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-18 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-
-2017-12-21 21:02:57,976 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-18 - Application started (Dev)
-2017-12-21 21:03:31,839 [INFO] from akka.event.slf4j.Slf4jLogger in application-akka.actor.default-dispatcher-3 - Slf4jLogger started
-2017-12-21 21:03:31,857 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-35 - Using the following cache for assets configuration:
-	 enabledCaching = false
-	 enabledCacheControl = false
-	 defaultCacheControl = public, max-age=3600
-	 aggressiveCacheControl = public, max-age=31536000, immutable
-	 configuredCacheControl:
-
-
-2017-12-21 21:03:31,861 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-35 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-
-2017-12-21 21:03:31,862 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-35 - Application started (Dev)
-2017-12-21 21:05:10,322 [INFO] from akka.event.slf4j.Slf4jLogger in application-akka.actor.default-dispatcher-4 - Slf4jLogger started
-2017-12-21 21:05:10,338 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-10 - Using the following cache for assets configuration:
-	 enabledCaching = false
-	 enabledCacheControl = false
-	 defaultCacheControl = public, max-age=3600
-	 aggressiveCacheControl = public, max-age=31536000, immutable
-	 configuredCacheControl:
-
-
-2017-12-21 21:05:10,340 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-10 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-
-2017-12-21 21:05:10,340 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-10 - Application started (Dev)
-2017-12-21 21:06:26,857 [INFO] from akka.event.slf4j.Slf4jLogger in application-akka.actor.default-dispatcher-3 - Slf4jLogger started
-2017-12-21 21:06:26,872 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-79 - Using the following cache for assets configuration:
-	 enabledCaching = false
-	 enabledCacheControl = false
-	 defaultCacheControl = public, max-age=3600
-	 aggressiveCacheControl = public, max-age=31536000, immutable
-	 configuredCacheControl:
-
-
-2017-12-21 21:06:26,875 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-79 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-
-2017-12-21 21:06:26,875 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-79 - Application started (Dev)
-2017-12-21 21:12:15,854 [INFO] from akka.event.slf4j.Slf4jLogger in application-akka.actor.default-dispatcher-2 - Slf4jLogger started
-2017-12-21 21:12:15,871 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-54 - Using the following cache for assets configuration:
-	 enabledCaching = false
-	 enabledCacheControl = false
-	 defaultCacheControl = public, max-age=3600
-	 aggressiveCacheControl = public, max-age=31536000, immutable
-	 configuredCacheControl:
-
-
-2017-12-21 21:12:15,874 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-54 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-
-2017-12-21 21:12:15,875 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-54 - Application started (Dev)
-2017-12-21 21:12:28,123 [INFO] from akka.event.slf4j.Slf4jLogger in application-akka.actor.default-dispatcher-2 - Slf4jLogger started
-2017-12-21 21:12:28,148 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-3 - Using the following cache for assets configuration:
-	 enabledCaching = false
-	 enabledCacheControl = false
-	 defaultCacheControl = public, max-age=3600
-	 aggressiveCacheControl = public, max-age=31536000, immutable
-	 configuredCacheControl:
-
-
-2017-12-21 21:12:28,152 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-3 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-
-2017-12-21 21:12:28,152 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-3 - Application started (Dev)
-2017-12-21 21:33:34,379 [INFO] from akka.event.slf4j.Slf4jLogger in application-akka.actor.default-dispatcher-2 - Slf4jLogger started
-2017-12-21 21:33:34,389 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-94 - Using the following cache for assets configuration:
-	 enabledCaching = false
-	 enabledCacheControl = false
-	 defaultCacheControl = public, max-age=3600
-	 aggressiveCacheControl = public, max-age=31536000, immutable
-	 configuredCacheControl:
-
-
-2017-12-21 21:33:34,394 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-94 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-
-2017-12-21 21:33:34,395 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-94 - Application started (Dev)
-2017-12-21 21:38:08,499 [INFO] from akka.event.slf4j.Slf4jLogger in application-akka.actor.default-dispatcher-4 - Slf4jLogger started
-2017-12-21 21:38:08,511 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-175 - Using the following cache for assets configuration:
-	 enabledCaching = false
-	 enabledCacheControl = false
-	 defaultCacheControl = public, max-age=3600
-	 aggressiveCacheControl = public, max-age=31536000, immutable
-	 configuredCacheControl:
-
-
-2017-12-21 21:38:08,513 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-175 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-
-2017-12-21 21:38:08,514 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-175 - Application started (Dev)
+! @76f0p7g8j - Internal server error, for (GET) [/allproject] ->
+ 
+play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[ConnectException: Connection refused: /10.0.0.30:8888]]
+	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:255)
+	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:182)
+	at play.core.server.AkkaHttpServer$$anonfun$$nestedInanonfun$executeHandler$1$1.applyOrElse(AkkaHttpServer.scala:252)
+	at play.core.server.AkkaHttpServer$$anonfun$$nestedInanonfun$executeHandler$1$1.applyOrElse(AkkaHttpServer.scala:251)
+	at scala.concurrent.Future.$anonfun$recoverWith$1(Future.scala:414)
+	at scala.concurrent.impl.Promise.$anonfun$transformWith$1(Promise.scala:37)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
+	at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:70)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:68)
+	at scala.concurrent.impl.Promise$DefaultPromise.$anonfun$tryComplete$1(Promise.scala:284)
+	at scala.concurrent.impl.Promise$DefaultPromise.$anonfun$tryComplete$1$adapted(Promise.scala:284)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:284)
+	at scala.concurrent.Promise.complete(Promise.scala:49)
+	at scala.concurrent.Promise.complete$(Promise.scala:48)
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:183)
+	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:29)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:91)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:12)
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:81)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:91)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:43)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+Caused by: java.net.ConnectException: Connection refused: /10.0.0.30:8888
+	at play.shaded.ahc.org.asynchttpclient.netty.channel.NettyConnectListener.onFailure(NettyConnectListener.java:168)
+	at play.shaded.ahc.org.asynchttpclient.netty.request.NettyChannelConnector$1.onFailure(NettyChannelConnector.java:103)
+	at play.shaded.ahc.org.asynchttpclient.netty.SimpleChannelFutureListener.operationComplete(SimpleChannelFutureListener.java:28)
+	at play.shaded.ahc.org.asynchttpclient.netty.SimpleChannelFutureListener.operationComplete(SimpleChannelFutureListener.java:20)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:507)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:500)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:479)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:420)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:122)
+	at play.shaded.ahc.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:278)
+	at play.shaded.ahc.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:294)
+	at play.shaded.ahc.io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:634)
+	at play.shaded.ahc.io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:581)
+	at play.shaded.ahc.io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:498)
+	at play.shaded.ahc.io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:460)
+	at play.shaded.ahc.io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:131)
+	at play.shaded.ahc.io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:138)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: play.shaded.ahc.io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /10.0.0.30:8888
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at play.shaded.ahc.io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:259)
+	at play.shaded.ahc.io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:291)
+	... 7 common frames omitted
+Caused by: java.net.ConnectException: Connection refused
+	... 11 common frames omitted

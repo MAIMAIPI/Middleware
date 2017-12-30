@@ -28,6 +28,7 @@
         <script src="@routes.Assets.at("js/moment-2.2.1.js")" type="text/javascript"></script>
         <script src="@routes.Assets.at("js/clndr.js")" type="text/javascript"></script>
         <script src="@routes.Assets.at("js/site.js")" type="text/javascript"></script>
+        <link rel="stylesheet" href="@routes.Assets.at("layui/css/layui.css")"/>
     }
 <body>
     @nav()
@@ -54,31 +55,31 @@
                 <div class="leftmain">
                     <div class="west">
                         <ul>
-                            @for(batch <- batches) {
-                                <li class="account1">
-                                    <a id="west1" class="actived">
-                                        <i class="fa fa-tasks"></i>
-                                        <span>@batch.year 年</span>
-                                        <i class="fa fa-angle-down"></i>
-                                    </a>
-                                </li>
+                        @for(batch <- batches) {
+                            <li class="account1">
+                                <a id="west1">
+                                    <i class="fa fa-tasks"></i>
+                                    <span>@batch.year 年</span>
+                                    <i class="fa fa-angle-down"></i>
+                                </a>
+                            </li>
 
-                                <div class="submenu1" style="display: none; ">
-                                    <ul class="root">
-                                    @for(batchItem <- batch.batchList) {
-                                        <li>
-                                            <a id="batch @batchItem.bid" class="actived">
-                                                <i class="fa fa-leaf"></i>
-                                                <span>@{
-                                                    batchItem.level + batchItem.name + "学期"
-                                                }</span>
-                                                <i class="fa fa-angle-right"></i>
-                                            </a>
-                                        </li>
-                                    }
-                                    </ul>
-                                </div>
-                            }
+                            <div class="submenu1" style="display: none; ">
+                                <ul class="root">
+                                @for(batchItem <- batch.batchList) {
+                                    <li>
+                                        <a class="tag" id="@batchItem.bid">
+                                            <i class="fa fa-leaf"></i>
+                                            <span>@{
+                                                batchItem.level + batchItem.name + "学期"
+                                            }</span>
+                                            <i class="fa fa-angle-right"></i>
+                                        </a>
+                                    </li>
+                                }
+                                </ul>
+                            </div>
+                        }
                         </ul>
                     </div>
                 </div>
@@ -113,6 +114,7 @@
                         </li>
 
                     </ul>
+
                     <div class="tab-content">
                         <div class="table-header clearfix">
                             <div class="id_col">序号</div>
@@ -155,10 +157,7 @@
                                     <div class="grade_col">9.9</div>
                                 </li>
                             </ul>
-                            <ul class="pagination event_pagination">
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                            </ul>
+                            <div id="demo7" style="text-align: center"></div>
                         </div>
                         <div class="tab-pane fade" id="qzjj">
                             <ul class="table-list">
@@ -195,10 +194,7 @@
                                     <div class="grade_col">9.9</div>
                                 </li>
                             </ul>
-                            <ul class="pagination event_pagination">
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                            </ul>
+                            <div id="demo7"></div>
                         </div>
                         <div class="tab-pane fade" id="mqjj">
                             <ul class="table-list">
@@ -235,10 +231,7 @@
                                     <div class="grade_col">9.9</div>
                                 </li>
                             </ul>
-                            <ul class="pagination event_pagination">
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                            </ul>
+                            <div id="demo7"></div>
                         </div>
                     </div>
                 </div>
@@ -250,11 +243,9 @@
         <!-- FlexSlider -->
     <link href="@routes.Assets.at("css/flexslider.css")" rel='stylesheet' type='text/css'/>
     <script defer src="@routes.Assets.at("js/jquery.flexslider.js")"></script>
+    <script src="@routes.Assets.at("layui/layui.js")"></script>
     <script src="@routes.Assets.at("js/allResources.js")"></script>
 <script type="text/javascript">
-        $(function () {
-            SyntaxHighlighter.all();
-        });
         $(window).load(function () {
             $('.flexslider').flexslider({
                 animation: "slide",

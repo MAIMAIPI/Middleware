@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/fan/sbtProject/MANAGER/conf/routes
-// @DATE:Tue Dec 19 21:30:04 CST 2017
+// @DATE:Sat Dec 30 14:23:35 CST 2017
 
 package router
 
@@ -16,7 +16,9 @@ class Routes(
   override val errorHandler: play.api.http.HttpErrorHandler, 
   // @LINE:5
   Application_1: controllers.Application,
-  // @LINE:14
+  // @LINE:13
+  Api_2: controllers.Api,
+  // @LINE:16
   Assets_0: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -25,13 +27,15 @@ class Routes(
    def this(errorHandler: play.api.http.HttpErrorHandler,
     // @LINE:5
     Application_1: controllers.Application,
-    // @LINE:14
+    // @LINE:13
+    Api_2: controllers.Api,
+    // @LINE:16
     Assets_0: controllers.Assets
-  ) = this(errorHandler, Application_1, Assets_0, "/")
+  ) = this(errorHandler, Application_1, Api_2, Assets_0, "/")
 
   def withPrefix(prefix: String): Routes = {
     router.RoutesPrefix.setPrefix(prefix)
-    new Routes(errorHandler, Application_1, Assets_0, prefix)
+    new Routes(errorHandler, Application_1, Api_2, Assets_0, prefix)
   }
 
   private[this] val defaultPrefix: String = {
@@ -43,6 +47,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """project""", """controllers.Application.project"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """projectinfo""", """controllers.Application.projectInfo"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """allproject""", """controllers.Application.allProject"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """selectProjectPageByBatch""", """controllers.Api.SelectProjectPageByBatch(bid:String, page:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.at(path:String = "/public", file:String)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -123,11 +128,29 @@ class Routes(
     )
   )
 
-  // @LINE:14
-  private[this] lazy val controllers_Assets_at4_route = Route("GET",
+  // @LINE:13
+  private[this] lazy val controllers_Api_SelectProjectPageByBatch4_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("selectProjectPageByBatch")))
+  )
+  private[this] lazy val controllers_Api_SelectProjectPageByBatch4_invoker = createInvoker(
+    Api_2.SelectProjectPageByBatch(fakeValue[String], fakeValue[String]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.Api",
+      "SelectProjectPageByBatch",
+      Seq(classOf[String], classOf[String]),
+      "GET",
+      this.prefix + """selectProjectPageByBatch""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:16
+  private[this] lazy val controllers_Assets_at5_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_at4_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_at5_invoker = createInvoker(
     Assets_0.at(fakeValue[String], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -168,10 +191,16 @@ class Routes(
         controllers_Application_allProject3_invoker.call(Application_1.allProject)
       }
   
-    // @LINE:14
-    case controllers_Assets_at4_route(params@_) =>
+    // @LINE:13
+    case controllers_Api_SelectProjectPageByBatch4_route(params@_) =>
+      call(params.fromQuery[String]("bid", None), params.fromQuery[String]("page", None)) { (bid, page) =>
+        controllers_Api_SelectProjectPageByBatch4_invoker.call(Api_2.SelectProjectPageByBatch(bid, page))
+      }
+  
+    // @LINE:16
+    case controllers_Assets_at5_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
-        controllers_Assets_at4_invoker.call(Assets_0.at(path, file))
+        controllers_Assets_at5_invoker.call(Assets_0.at(path, file))
       }
   }
 }
