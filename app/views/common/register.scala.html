@@ -1,0 +1,91 @@
+@()(implicit header: RequestHeader)
+
+<!DOCTYPE HTML>
+<html>
+    @head("注册") {
+        <script>
+                $(document).ready(function () {
+                    $(".dropdown").hover(
+                            function () {
+                                $('.dropdown-menu', this).stop(true, true).slideDown("fast");
+                                $(this).toggleClass('open');
+                            },
+                            function () {
+                                $('.dropdown-menu', this).stop(true, true).slideUp("fast");
+                                $(this).toggleClass('open');
+                            }
+                    );
+                });
+        </script>
+    }
+<body>
+    @nav()
+        <!-- banner -->
+    <div class="courses_banner">
+        <div class="container">
+            <h3>注册</h3>
+            <p class="description">
+                Welcome to join JSUCCW! Here we will meet a group of like-minded students,
+                grow together, learn professional knowledge, I hope everyone here can meet better myself. Finally, I wish
+                you all success!
+            </p>
+            <div class="breadcrumb1">
+                <ul>
+                    <li class="icon6"><a href="@routes.Application.index()">首页</a></li>
+                    <li class="current-page">注册</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+        <!-- //banner -->
+    <div class="courses_box1">
+        <div class="container">
+            <form class="login" id="form">
+                <p class="lead">注册新账户</p>
+                <div class="form-group">
+                    <input type="text" autocomplete="off" class="required form-control" id="name" placeholder="真实姓名" name="name" value="">
+                </div>
+                <div class="form-group">
+                    <input type="text" autocomplete="off" class="required form-control" id="id" placeholder="学号" name="id" value="">
+                </div>
+                <div class="form-group">
+                    <input type="text" autocomplete="off" class="required form-control" placeholder="手机号" id="tel" name="tel" value="">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="required form-control" placeholder="密码" name="password" id="password">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="required form-control" placeholder="确认密码" id="repassword"
+                    name="repassword" value="">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary btn-lg1 btn-block" id="submit" style="margin: 1.5em 0">注册</button>
+                </div>
+                <p>已经拥有账户了吗？ <a href="@routes.Application.login()">登录</a></p>
+            </form>
+        </div>
+    </div>
+    @footer()
+</body>
+
+<script>
+        $('#submit').click(function () {
+            $.ajax({
+                url: '@routes.Application.doRegister',
+                data: $('#form').serialize(),
+                dataType: 'json',
+                processData:false,
+                type: 'POST',
+                success: function (data) {
+                    if(data.ok === 1) {
+                        alert("注册成功");
+                        window.location.href="/";
+                    } else {
+                        alert(data.cause);
+                    }
+                }
+            });
+            return false;
+        })
+</script>
+</html>
